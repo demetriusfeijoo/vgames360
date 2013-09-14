@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GamePoint.iml" filepath="$PROJECT_DIR$/GamePoint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tinyapi/tinyapi.iml" filepath="$PROJECT_DIR$/tinyapi/tinyapi.iml" />
+    </modules>
+  </component>
+</project>
+
