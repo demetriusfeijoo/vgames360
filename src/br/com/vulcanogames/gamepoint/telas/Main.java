@@ -1,100 +1,54 @@
 package br.com.vulcanogames.gamepoint.telas;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import br.com.vulcanogames.gamepoint.MyServiceSettings;
+import android.support.v4.app.Fragment;
+import br.com.vulcanogames.gamepoint.MenuSliding;
 import br.com.vulcanogames.gamepoint.R;
-import com.actionbarsherlock.app.SherlockListActivity;
-import com.actionbarsherlock.view.Window;
-import com.asccode.tinyapi.RequestCallback;
-import com.asccode.tinyapi.Response;
-import com.asccode.tinyapi.Service;
-import com.asccode.tinyapi.model.Article;
-import com.asccode.tinyapi.model.Login;
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
-import java.util.List;
+public class Main extends BaseActivity{
 
-public class Main extends SherlockListActivity{
+    private Fragment mContent;
+
+    public Main(){
+        super(R.string.app_name);
+
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);  //Habilita Loading
-         /*
-        SlidingMenu menu = new SlidingMenu(this);
-        menu.setMode(SlidingMenu.LEFT);
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        menu.setShadowWidthRes(R.dimen.shadow_width);
-        menu.setShadowDrawable(R.drawable.shadow);
-        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-        menu.setFadeDegree(0.35f);
-        //menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        //menu.setMenu(R.layout.main);
-        getSherlock().getActionBar().setDisplayHomeAsUpEnabled(true);
-            */
-        MyServiceSettings myServiceSettings = new MyServiceSettings(getSharedPreferences("PREFS", 0));
+        if (savedInstanceState != null)
+            mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
 
-        final Service service = new Service(myServiceSettings, this);
+        if (mContent == null)
+            mContent = new MainView();
 
-        // Faz login e no callback de sucesso pega os artigos
-        if( !myServiceSettings.isAuthenticated() ){
-            service.authenticate( new RequestCallback<Login>() {
-                @Override
-                public void onStart() {
-                    setSupportProgressBarIndeterminateVisibility(true);
-                }
+        setContentView(R.layout.content_frame);
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, mContent).commit();
 
-                @Override
-                public void onSuccess(Response<Login> successResponse) {
+        setBehindContentView(R.layout.menu_frame);
+        getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new MenuSliding()).commit();
 
-                    setSupportProgressBarIndeterminateVisibility(false);
-                    service.articles(articleRequestCallback);
-
-                }
-
-                @Override
-                public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
-
-                    setSupportProgressBarIndeterminateVisibility(false);
-
-                }
-            });
-        }else{ //Pega os artigos diretos, pois está logado.
-            service.articles(articleRequestCallback);
-        }
+        getSlidingMenu().setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
+        setSlidingActionBarEnabled(true);
 
 
     }
 
-    private RequestCallback articleRequestCallback = new RequestCallback<List<Article>>() {
-        @Override
-        public void onStart() {
+    @Override
+    public void onSaveInstanceState(Bundle outState){
 
-            setSupportProgressBarIndeterminateVisibility(true);
+        super.onSaveInstanceState(outState);
+        getSupportFragmentManager().putFragment(outState, "mContent", mContent);
 
-        }
+    }
 
-        @Override
-        public void onSuccess(Response<List<Article>> successResponse) {
-
-            ListAdapter listAdapter = new ArrayAdapter<Article>( Main.this, android.R.layout.simple_list_item_1, successResponse.getContent() );
-
-            setListAdapter(listAdapter);
-
-            setSupportProgressBarIndeterminateVisibility(false);
-
-        }
-
-        @Override
-        public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
-
-            setSupportProgressBarIndeterminateVisibility(false);
-
-        }
-    };
+    public void switchContent(Fragment fragment){
+        mContent = fragment;
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
+        getSlidingMenu().showContent();
+    }
 
 }
