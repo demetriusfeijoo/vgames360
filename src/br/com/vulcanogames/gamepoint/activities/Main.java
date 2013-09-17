@@ -1,9 +1,11 @@
-package br.com.vulcanogames.gamepoint.telas;
+package br.com.vulcanogames.gamepoint.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import br.com.vulcanogames.gamepoint.MenuSliding;
 import br.com.vulcanogames.gamepoint.R;
+import br.com.vulcanogames.gamepoint.fragments.MainView;
 
 public class Main extends BaseActivity{
 
@@ -41,14 +43,18 @@ public class Main extends BaseActivity{
     public void onSaveInstanceState(Bundle outState){
 
         super.onSaveInstanceState(outState);
+
         getSupportFragmentManager().putFragment(outState, "mContent", mContent);
 
     }
 
     public void switchContent(Fragment fragment){
+
         mContent = fragment;
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
         getSlidingMenu().showContent();
+
     }
 
 }

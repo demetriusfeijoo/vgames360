@@ -1,11 +1,12 @@
-package br.com.vulcanogames.gamepoint.telas;
+package br.com.vulcanogames.gamepoint.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import br.com.vulcanogames.gamepoint.MyServiceSettings;
 import br.com.vulcanogames.gamepoint.R;
 import com.actionbarsherlock.app.SherlockListFragment;
@@ -15,6 +16,7 @@ import com.asccode.tinyapi.Service;
 import com.asccode.tinyapi.model.Article;
 import com.asccode.tinyapi.model.Login;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,11 +29,19 @@ import java.util.List;
 
 public class MainView extends SherlockListFragment {
 
+    private Service service;
+    private List<Article> articles = new ArrayList<>(REQUEST_ARTICLES_SIZE);
+    private ArrayAdapter<Article> articleArrayAdapter;
+    private int page = 0;
+    private boolean loading = false;
+
+    private final static int REQUEST_ARTICLES_SIZE = 20;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
         MyServiceSettings myServiceSettings = new MyServiceSettings(getActivity().getSharedPreferences("PREFS", 0));
 
-        final Service service = new Service(myServiceSettings, getActivity());
+        this.service = new Service(myServiceSettings, getActivity());
 
         if( !myServiceSettings.isAuthenticated() ){
             service.authenticate( new RequestCallback<Login>() {
@@ -65,9 +75,38 @@ public class MainView extends SherlockListFragment {
 
     }
 
+    private void watchListViewEvents(){
+
+        getListView().setOnScrollListener( new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView absListView, int i) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount){
+
+                int supposedNextItem = firstVisibleItem + visibleItemCount + 5;
+
+                boolean nextItemNotExists = supposedNextItem >= totalItemCount;
+
+                if( !loading && nextItemNotExists ){
+
+                    Log.i("VGames", "Load more "+REQUEST_ARTICLES_SIZE);
+                    service.articles(articleRequestCallback);
+
+                }
+
+            }
+        });
+
+    }
+
     private RequestCallback articleRequestCallback = new RequestCallback<List<Article>>() {
         @Override
         public void onStart() {
+
+            loading = true;
 
             getSherlockActivity().setSupportProgressBarIndeterminateVisibility(true);
 
@@ -76,9 +115,25 @@ public class MainView extends SherlockListFragment {
         @Override
         public void onSuccess(Response<List<Article>> successResponse) {
 
-            ListAdapter listAdapter = new ArrayAdapter<Article>( getActivity(), android.R.layout.simple_list_item_1, successResponse.getContent() );
+            articles.addAll(successResponse.getContent());
 
-            setListAdapter(listAdapter);
+            if( page == 0){
+
+                articleArrayAdapter = new ArrayAdapter<>( getActivity(), android.R.layout.simple_list_item_1, articles );
+
+                setListAdapter(articleArrayAdapter);
+
+                watchListViewEvents(); // Watch ListView
+
+            }else{
+
+                articleArrayAdapter.notifyDataSetChanged();
+
+            }
+
+            ++page;
+
+            loading = false;
 
             getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
 
@@ -86,6 +141,8 @@ public class MainView extends SherlockListFragment {
 
         @Override
         public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
+
+            loading = false;
 
             getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
 
