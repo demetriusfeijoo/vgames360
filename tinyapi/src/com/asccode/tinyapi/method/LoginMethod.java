@@ -2,10 +2,8 @@ package com.asccode.tinyapi.method;
 
 import android.content.Context;
 import android.util.Log;
+import com.asccode.tinyapi.*;
 import com.asccode.tinyapi.Error;
-import com.asccode.tinyapi.Method;
-import com.asccode.tinyapi.ServiceSettings;
-import com.asccode.tinyapi.Response;
 import com.asccode.tinyapi.model.Login;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -73,14 +71,7 @@ public class LoginMethod extends Method<Login> {
 
         }else{
 
-            // Criar os erros padronizados e externalizar todos para uma classe
-
-            String seq = "";
-            int status = 0;
-
-            Error error = new Error("User Already Logged");
-
-            Response<Error> errorResponse = new Response<>(seq, status, error);
+            Response<Error> errorResponse = ResponseUtils.buildResponseError(RequestError.ALREADY_LOGGED_IN);
 
             this.error(errorResponse);
 

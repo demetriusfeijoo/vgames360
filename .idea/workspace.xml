@@ -45,20 +45,17 @@
       </GlobalState>
     </option>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="VGames" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="eea7f5ab-9834-40d9-bb87-91020496f27f" name="Default" comment="" />
     <ignored path="GamePoint.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Method.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379458411428" ignored="false" />
-    <file path="/fragment.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379461865932" ignored="false" />
+    <file path="/Method.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379473536845" ignored="false" />
+    <file path="/fragment.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379465370621" ignored="false" />
     <file path="/MethodCallback.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379118885921" ignored="false" />
     <file path="/RequestCallback.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379124497213" ignored="false" />
     <file path="/Response.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379118551239" ignored="false" />
     <file path="/Error.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379118787175" ignored="false" />
-    <file path="/LoginMethod.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379181608281" ignored="false" />
+    <file path="/LoginMethod.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379469303580" ignored="false" />
     <file path="/Login.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379122106194" ignored="false" />
     <file path="/Service.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379461641815" ignored="false" />
     <file path="/Main.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379372733587" ignored="false" />
@@ -78,7 +75,7 @@
     <file path="/dimens.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379202719443" ignored="false" />
     <file path="/BaseActivity.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379270262734" ignored="false" />
     <file path="/SlidingFragmentActivity.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379257836003" ignored="false" />
-    <file path="/MainView.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379462311559" ignored="false" />
+    <file path="/MainView.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379471470064" ignored="false" />
     <file path="/RandomList.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379269576260" ignored="false" />
     <file path="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/telas/ArticleCallback.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379269716897" ignored="false" />
     <file path="/Dummy.txt" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379372996964" ignored="false" />
@@ -87,6 +84,8 @@
     <file path="/about.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379373511940" ignored="false" />
     <file path="/sliding_menu.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379373687092" ignored="false" />
     <file path="/MainAdapter.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379375028983" ignored="false" />
+    <file path="/RequestError.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379469514197" ignored="false" />
+    <file path="/ResponseUtils.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379470492570" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,28 +146,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="1533" selection-end="1533" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/adapters/MainAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="8" selection-start="395" selection-end="483" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainView.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/fragments/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="55" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.0">
+            <state line="156" column="14" selection-start="4813" selection-end="4813" vertical-scroll-proportion="0.38356164">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginMethod.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/LoginMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="33" selection-start="1748" selection-end="1858" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -186,30 +176,36 @@
       <file leaf-file-name="ArticleMethod.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/ArticleMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="22" selection-start="2699" selection-end="2699" vertical-scroll-proportion="0.0">
+            <state line="111" column="0" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Method.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Method.java">
+      <file leaf-file-name="Error.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Error.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="17" selection-start="4304" selection-end="4304" vertical-scroll-proportion="0.6910569">
+            <state line="11" column="22" selection-start="226" selection-end="238" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <file leaf-file-name="ResponseUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/ResponseUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
+            <state line="20" column="5" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="RequestError.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/RequestError.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="36" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -217,6 +213,24 @@
         <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="42" column="34" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Method.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Method.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="202" column="0" selection-start="6058" selection-end="6058" vertical-scroll-proportion="-108.6">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyServiceSettings.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/MyServiceSettings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="72" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -232,11 +246,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/SlidingMenu.java" />
-        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/telas/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/telas/About.java" />
-        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/MenuSliding.java" />
-        <option value="$PROJECT_DIR$/res/layout/about.xml" />
         <option value="$PROJECT_DIR$/res/layout/sliding_menu.xml" />
         <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/telas/MainView.java" />
         <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/telas/Main.java" />
@@ -246,8 +255,13 @@
         <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/HeadlineMethod.java" />
         <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/ArticleMethod.java" />
         <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Service.java" />
-        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/fragments/MainView.java" />
+        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Error.java" />
+        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/LoginMethod.java" />
+        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/RequestError.java" />
+        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/ResponseUtils.java" />
         <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Method.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/MyServiceSettings.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/fragments/MainView.java" />
       </list>
     </option>
   </component>
@@ -682,16 +696,16 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262032" sideWeight="0.49959448" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22816399" sideWeight="0.2457421" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32085562" sideWeight="0.5028386" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24592833" sideWeight="0.24077329" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32085562" sideWeight="0.4971614" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22816399" sideWeight="0.7542579" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32085562" sideWeight="0.4971614" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5080214" sideWeight="0.7542579" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24249797" sideWeight="0.771836" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24249797" sideWeight="0.6791444" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262032" sideWeight="0.4971614" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19302514" sideWeight="0.6737968" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -769,45 +783,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/Documents/android/sdk/platforms/android-17/android.jar!/android/os/Handler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="3379" selection-end="3379" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="22" selection-start="825" selection-end="825" vertical-scroll-proportion="0.7768924">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/MyServiceSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="354" selection-end="354" vertical-scroll-proportion="-2.9416058">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/content_frame.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/about.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="29" selection-start="353" selection-end="353" vertical-scroll-proportion="0.4643963">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/fragments/About.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="57" selection-start="645" selection-end="645" vertical-scroll-proportion="0.55714285">
@@ -863,13 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/ArticleMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="22" selection-start="2699" selection-end="2699" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="42" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0">
@@ -877,16 +845,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/fragments/MainView.java">
+    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Error.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="55" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.0">
+        <state line="11" column="22" selection-start="226" selection-end="238" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/RequestError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="36" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/ArticleMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="0" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/LoginMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="33" selection-start="1748" selection-end="1858" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/ResponseUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="5" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="17" selection-start="4304" selection-end="4304" vertical-scroll-proportion="0.6910569">
+        <state line="202" column="0" selection-start="6058" selection-end="6058" vertical-scroll-proportion="-108.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/MyServiceSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="72" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/fragments/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="14" selection-start="4813" selection-end="4813" vertical-scroll-proportion="0.38356164">
           <folding />
         </state>
       </provider>

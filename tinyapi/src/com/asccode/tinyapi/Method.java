@@ -10,10 +10,7 @@ import android.os.AsyncTask;
 import android.provider.Settings;
 import android.util.Base64;
 import android.util.Log;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.HttpPost;
@@ -27,7 +24,7 @@ import java.util.Map;
  * @author <a href="mailto:demetrius.feijoo.91@gmail.com">Demetrius Feijoo Campos</a>
  */
 
-// SET TIMEOUT // CACHE?
+// SET TIMEOUT // CACHE?    //Substituir para o HttpURLConnection que é mais performático
 public abstract class Method<ResponseType>{
 
     private final ServiceSettings serviceSettings;
@@ -171,7 +168,19 @@ public abstract class Method<ResponseType>{
 
                 }else{ //CRIAR API RESPONSE ERROR MONTADO
 
-                    Log.e( "TinyAPI", statusLine.getReasonPhrase() );
+                    String seq = "";
+                    int status = 1;
+                    int statusCode = statusLine.getStatusCode();
+
+                    String json = String.format("{seq:\"%s\",status:\"%d\",content:{error:\"%d\"}}", seq, status, statusCode);
+
+                    try{
+
+                        response = new JsonParser().parse(json).getAsJsonObject();
+
+                    }catch ( JsonParseException jsonParseException ){
+
+                    }
 
                 }
 
@@ -204,9 +213,38 @@ public abstract class Method<ResponseType>{
 
             }else{
 
-                Error error = new Error(result.get("content").getAsJsonObject().get("error").getAsString());
+                Error apiError = null;
 
-                Response<Error> errorResponse = new Response<>(seq, status, error);
+                String errorStr = result.get("content").getAsJsonObject().get("error").getAsString();
+
+                if (errorStr.equals("LOGIN_ERROR")) {
+
+                    apiError = new Error( RequestError.LOGIN_ERROR );
+
+                } else if (errorStr.equals("API_DISABLED")) {
+
+                    apiError = new Error( RequestError.API_DISABLED );
+
+                } else if (errorStr.equals("NOT_LOGGED_IN")) {
+
+                    apiError = new Error( RequestError.NOT_LOGGED_IN );
+
+                } else if (errorStr.equals("INCORRECT_USAGE")) {
+
+                    apiError = new Error( RequestError.INCORRECT_USAGE );
+
+                } else if (errorStr.equals("UNKNOWN_METHOD")) {
+
+                    apiError = new Error( RequestError.UNKNOWN_METHOD );
+
+                }
+
+                Response<Error> errorResponse = null;
+
+                if( apiError != null ) // Erro na api
+                    errorResponse = new Response<>(seq, status, apiError);
+                else //Erro de requisicao
+                    errorResponse = new Response<>(seq, status, new Error( httpError( Integer.parseInt(errorStr) ) ));
 
                 Method.this.error(errorResponse);
 
@@ -217,5 +255,31 @@ public abstract class Method<ResponseType>{
 
         }
     };
+
+    private RequestError httpError( int statusCode ){
+
+        switch ( statusCode ){
+
+            case 400:
+                return RequestError.BAD_REQUEST;
+            case 401:
+                return RequestError.SERVICE_UNAVAILABLE;
+            case 404:
+                return RequestError.NOT_FOUND;
+            case 408:
+                return RequestError.TIMEOUT;
+            case 413:
+                return RequestError.TOO_LONG;
+            case 502:
+                return RequestError.BAD_GATEWAY;
+            case 503:
+                return RequestError.SERVICE_UNAVAILABLE;
+            case 504:
+                return RequestError.GATEWAY_TIMEOUT;
+            default:
+                return RequestError.UNKNOWN_HTTP_ERROR;
+
+        }
+    }
 
 }

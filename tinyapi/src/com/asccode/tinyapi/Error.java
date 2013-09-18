@@ -9,13 +9,13 @@ package com.asccode.tinyapi;
  */
 public class Error {
 
-    private final String error;
+    private final RequestError error;
 
-    public Error(String error) {
+    public Error(RequestError error) {
         this.error = error;
     }
 
-    public String getError() {
+    public RequestError getError() {
         return error;
     }
 }

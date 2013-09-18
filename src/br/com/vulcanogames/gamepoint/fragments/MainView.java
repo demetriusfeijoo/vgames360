@@ -34,6 +34,7 @@ public class MainView extends SherlockListFragment {
     private ArrayAdapter<Article> articleArrayAdapter;
     private int page = 0;
     private boolean loading = false;
+    private boolean loadMore = true;
 
     private final static int REQUEST_ARTICLES_SIZE = 20;
 
@@ -90,7 +91,7 @@ public class MainView extends SherlockListFragment {
 
                 boolean nextItemNotExists = supposedNextItem >= totalItemCount;
 
-                if( !loading && nextItemNotExists ){
+                if( !loading && loadMore && nextItemNotExists ){
 
                     int offset = page * MainView.REQUEST_ARTICLES_SIZE;
 
@@ -117,23 +118,31 @@ public class MainView extends SherlockListFragment {
         @Override
         public void onSuccess(Response<List<Article>> successResponse) {
 
-            articles.addAll(successResponse.getContent());
+            if( successResponse.getContent().size() > 0 ){
 
-            if( page == 0){
+                articles.addAll(successResponse.getContent());
 
-                articleArrayAdapter = new ArrayAdapter<>( getActivity(), android.R.layout.simple_list_item_1, articles );
+                if( page == 0){
 
-                setListAdapter(articleArrayAdapter);
+                    articleArrayAdapter = new ArrayAdapter<>( getActivity(), android.R.layout.simple_list_item_1, articles );
 
-                watchListViewEvents(); // Watch ListView
+                    setListAdapter(articleArrayAdapter);
+
+                    watchListViewEvents(); // Watch ListView
+
+                }else{
+
+                    articleArrayAdapter.notifyDataSetChanged();
+
+                }
+
+                ++page;
 
             }else{
 
-                articleArrayAdapter.notifyDataSetChanged();
+                loadMore = false;
 
             }
-
-            ++page;
 
             loading = false;
 
@@ -145,7 +154,7 @@ public class MainView extends SherlockListFragment {
         public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
 
             loading = false;
-
+            //Log.d( "VGames", errorResponse.getContent().getError().name() );
             getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
 
         }
