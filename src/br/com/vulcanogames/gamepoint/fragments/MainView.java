@@ -68,7 +68,7 @@ public class MainView extends SherlockListFragment {
                 }
             });
         }else{
-            service.articles(articleRequestCallback);
+            service.articles(0, MainView.REQUEST_ARTICLES_SIZE, articleRequestCallback);
         }
 
         return inflater.inflate(R.layout.main, container, false);
@@ -92,9 +92,11 @@ public class MainView extends SherlockListFragment {
 
                 if( !loading && nextItemNotExists ){
 
-                    Log.i("VGames", "Load more "+REQUEST_ARTICLES_SIZE);
-                    service.articles(articleRequestCallback);
+                    int offset = page * MainView.REQUEST_ARTICLES_SIZE;
 
+                    service.articles(offset, MainView.REQUEST_ARTICLES_SIZE, articleRequestCallback);
+
+                    Log.i("VGames", String.format("Load more articles from offset %d until length %d", offset, MainView.REQUEST_ARTICLES_SIZE));
                 }
 
             }

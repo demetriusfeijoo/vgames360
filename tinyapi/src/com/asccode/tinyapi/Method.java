@@ -208,22 +208,6 @@ public abstract class Method<ResponseType>{
 
                 Response<Error> errorResponse = new Response<>(seq, status, error);
 
-                String errorStr = error.getError();
-
-                if (errorStr.equals("LOGIN_ERROR")) {
-
-                } else if (errorStr.equals("API_DISABLED")) {
-
-                } else if (errorStr.equals("NOT_LOGGED_IN")) {
-
-                } else if (errorStr.equals("INCORRECT_USAGE")) {
-
-                } else if (errorStr.equals("UNKNOWN_METHOD")) {
-
-                } else {
-                    Log.d("TinyAPI", "Unknown API error: " + errorStr);
-                }
-
                 Method.this.error(errorResponse);
 
                 if( Method.this.requestCallback != null )

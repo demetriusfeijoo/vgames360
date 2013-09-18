@@ -47,6 +47,12 @@ public class Service {
 
     }
 
+    public void articles(){
+
+        this.articles(null);
+
+    }
+
     public void articles(RequestCallback<List<Article>> listRequestCallback){
 
         Log.d("TinyAPI", "Before execute article method");
@@ -59,6 +65,28 @@ public class Service {
 
         Log.d("TinyAPI", "After execute article method");
 
+    }
+
+
+    public void articles( int offset, int length){
+
+        this.articles(offset, length, null);
+
+    }
+
+    public void articles( int offset, int length, RequestCallback<List<Article>> listRequestCallback ){
+
+        Log.d("TinyAPI", "Before execute article method");
+
+        ArticleMethod method = new ArticleMethod(this.serviceSettings, this.context);
+
+        method.setOffset(offset);
+        method.setLength(length);
+        method.setRequestCallback( listRequestCallback );
+
+        method.execute();
+
+        Log.d("TinyAPI", "After execute article method");
     }
 
 }
