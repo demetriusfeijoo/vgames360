@@ -1,21 +1,28 @@
 package br.com.vulcanogames.gamepoint.fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 import br.com.vulcanogames.gamepoint.MyServiceSettings;
 import br.com.vulcanogames.gamepoint.R;
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.asccode.tinyapi.RequestCallback;
 import com.asccode.tinyapi.Response;
 import com.asccode.tinyapi.Service;
+import com.asccode.tinyapi.ServiceSettings;
 import com.asccode.tinyapi.model.Article;
 import com.asccode.tinyapi.model.Login;
 
+import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +37,7 @@ import java.util.List;
 public class MainView extends SherlockListFragment {
 
     private Service service;
+    private ServiceSettings serviceSettings;
     private List<Article> articles = new ArrayList<>(REQUEST_ARTICLES_SIZE);
     private ArrayAdapter<Article> articleArrayAdapter;
     private int page = 0;
@@ -40,48 +48,113 @@ public class MainView extends SherlockListFragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
-        MyServiceSettings myServiceSettings = new MyServiceSettings(getActivity().getSharedPreferences("PREFS", 0));
+        this.serviceSettings = new MyServiceSettings(getActivity().getSharedPreferences("PREFS", 0));
 
-        this.service = new Service(myServiceSettings, getActivity());
-
-        if( !myServiceSettings.isAuthenticated() ){
-            service.authenticate( new RequestCallback<Login>() {
-                @Override
-                public void onStart() {
-
-                   getSherlockActivity().setSupportProgressBarIndeterminateVisibility(true);
-
-                }
-
-                @Override
-                public void onSuccess(Response<Login> successResponse) {
-
-                    getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
-                    service.articles(articleRequestCallback);
-
-                }
-
-                @Override
-                public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
-
-                   getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
-
-                }
-            });
-        }else{
-            service.articles(0, MainView.REQUEST_ARTICLES_SIZE, articleRequestCallback);
-        }
+        this.service = new Service(this.serviceSettings, getActivity());
 
         return inflater.inflate(R.layout.main, container, false);
+
+    }
+
+    @Override
+    public void onResume() {
+
+        this.loadData( this.serviceSettings );
+
+        super.onResume();    //To change body of overridden methods use File | Settings | File Templates.
+    }
+
+    private void loadData( ServiceSettings serviceSettings ){
+
+        if( !serviceSettings.isAuthenticated() )
+            this.authenticate();
+        else
+            this.loadArticleList();
+
+    }
+
+    private void authenticate(){
+
+        try{
+
+            service.authenticate( new RequestCallback<Login>() {
+            @Override
+            public void onStart() {
+
+                getSherlockActivity().setSupportProgressBarIndeterminateVisibility(true);
+
+            }
+
+            @Override
+            public void onSuccess(Response<Login> successResponse){
+
+                getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
+
+                loadArticleList();
+
+            }
+
+            @Override
+            public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
+
+                getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
+
+            }
+        });
+
+        }catch( ConnectException e ){
+
+            onUnavailableConnection();
+
+        }
+    }
+
+    private void loadArticleList(){
+
+        int offset = page * MainView.REQUEST_ARTICLES_SIZE;
+
+        try{
+
+            service.articles(offset, MainView.REQUEST_ARTICLES_SIZE, articleRequestCallback);
+
+            Log.i("VGames", String.format("Load articles from offset %d until length %d", offset, MainView.REQUEST_ARTICLES_SIZE));
+
+        }catch( ConnectException e ){
+
+            onUnavailableConnection();
+
+        }
+    }
+
+    private void onUnavailableConnection(){
+
+        this.getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+        alert.setTitle(com.asccode.tinyapi.R.string.alertError);
+        alert.setCancelable(true);
+        alert.setMessage(R.string.unavailableNetwork);
+        alert.setIcon(android.R.drawable.ic_dialog_alert);
+        alert.setNegativeButton(R.string.negativeAlertButton, null);
+        alert.setPositiveButton(R.string.positiveAlertButton, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                getActivity().startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+
+            }
+        });
+
+        alert.show();
 
     }
 
     private void watchListViewEvents(){
 
         getListView().setOnScrollListener( new AbsListView.OnScrollListener() {
+
             @Override
             public void onScrollStateChanged(AbsListView absListView, int i) {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
@@ -93,14 +166,12 @@ public class MainView extends SherlockListFragment {
 
                 if( !loading && loadMore && nextItemNotExists ){
 
-                    int offset = page * MainView.REQUEST_ARTICLES_SIZE;
+                    loadArticleList();
 
-                    service.articles(offset, MainView.REQUEST_ARTICLES_SIZE, articleRequestCallback);
-
-                    Log.i("VGames", String.format("Load more articles from offset %d until length %d", offset, MainView.REQUEST_ARTICLES_SIZE));
                 }
 
             }
+
         });
 
     }
@@ -117,16 +188,17 @@ public class MainView extends SherlockListFragment {
 
         @Override
         public void onSuccess(Response<List<Article>> successResponse) {
-
             if( successResponse.getContent().size() > 0 ){
 
                 articles.addAll(successResponse.getContent());
 
                 if( page == 0){
 
-                    articleArrayAdapter = new ArrayAdapter<>( getActivity(), android.R.layout.simple_list_item_1, articles );
+                    articleArrayAdapter = new ArrayAdapter<>( getSherlockActivity(), android.R.layout.simple_list_item_1, articles );
 
-                    setListAdapter(articleArrayAdapter);
+                    getListView().setAdapter(articleArrayAdapter);
+
+                    Toast.makeText( getActivity(), "Carregou "+getListView(), Toast.LENGTH_LONG ).show();
 
                     watchListViewEvents(); // Watch ListView
 
@@ -154,7 +226,6 @@ public class MainView extends SherlockListFragment {
         public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
 
             loading = false;
-            //Log.d( "VGames", errorResponse.getContent().getError().name() );
             getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
 
         }

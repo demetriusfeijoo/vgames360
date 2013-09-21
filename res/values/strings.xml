@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">VGamesApp</string>
+    <string name="noAvailableData">No Available Data</string>
+    <string name="btnReload">Tentar Novamente</string>
+    <string name="unavailableNetwork">Conexão Indisponível! Deseja ativar o seu wi-fi?</string>
+    <string name="positiveAlertButton">Sim</string>
+    <string name="negativeAlertButton">Não</string>
 </resources>

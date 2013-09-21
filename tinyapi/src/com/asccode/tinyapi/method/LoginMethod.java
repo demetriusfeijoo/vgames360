@@ -8,6 +8,7 @@ import com.asccode.tinyapi.model.Login;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import java.net.ConnectException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,7 +64,7 @@ public class LoginMethod extends Method<Login> {
     }
 
     @Override
-    public void execute() {
+    public void execute() throws ConnectException{
 
         if( !this.getServiceSettings().isAuthenticated() ){
 

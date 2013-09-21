@@ -1,5 +1,6 @@
 package com.asccode.tinyapi;
 
+import java.net.ConnectException;
 import java.net.URI;
 import java.util.List;
 
@@ -29,13 +30,13 @@ public class Service {
 
     }
 
-    public void authenticate(){
+    public void authenticate() throws ConnectException{
 
         this.authenticate(null);
 
     }
 
-    public void authenticate(RequestCallback<Login> loginRequestCallback){
+    public void authenticate(RequestCallback<Login> loginRequestCallback) throws ConnectException{
 
         Log.d("TinyAPI", "Before execute authenticate method");
         Method<Login> method = new LoginMethod(this.serviceSettings, this.context);
@@ -47,13 +48,13 @@ public class Service {
 
     }
 
-    public void articles(){
+    public void articles() throws ConnectException{
 
         this.articles(null);
 
     }
 
-    public void articles(RequestCallback<List<Article>> listRequestCallback){
+    public void articles(RequestCallback<List<Article>> listRequestCallback) throws ConnectException{
 
         Log.d("TinyAPI", "Before execute article method");
 
@@ -68,13 +69,13 @@ public class Service {
     }
 
 
-    public void articles( int offset, int length){
+    public void articles( int offset, int length) throws ConnectException{
 
         this.articles(offset, length, null);
 
     }
 
-    public void articles( int offset, int length, RequestCallback<List<Article>> listRequestCallback ){
+    public void articles( int offset, int length, RequestCallback<List<Article>> listRequestCallback ) throws ConnectException{
 
         Log.d("TinyAPI", "Before execute article method");
 

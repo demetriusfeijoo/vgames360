@@ -18,6 +18,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
+import java.net.ConnectException;
 import java.util.Map;
 
 /**
@@ -80,7 +81,7 @@ public abstract class Method<ResponseType>{
 
     }
 
-    public void execute(){
+    public void execute() throws ConnectException {
 
         if( this.isNetworkAvailable() ){
 
@@ -88,24 +89,7 @@ public abstract class Method<ResponseType>{
 
         }else{
 
-            Log.w("TinyAPI", this.context.getString(R.string.unavailableNetwork));
-
-            AlertDialog.Builder alert = new AlertDialog.Builder(this.context);
-            alert.setTitle(R.string.alertError);
-            alert.setCancelable(true);
-            alert.setMessage(R.string.unavailableNetwork);
-            alert.setIcon(android.R.drawable.ic_dialog_alert);
-            alert.setNegativeButton(R.string.negativeAlertButton, null);
-            alert.setPositiveButton(R.string.positiveAlertButton, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-
-                    Method.this.context.startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-
-                }
-            });
-
-            alert.show();
+            throw new ConnectException( this.context.getString( R.string.connectException ) );
 
         }
 
