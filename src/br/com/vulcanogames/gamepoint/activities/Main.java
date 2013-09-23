@@ -3,6 +3,7 @@ package br.com.vulcanogames.gamepoint.activities;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.widget.Toast;
 import br.com.vulcanogames.gamepoint.MenuSliding;
 import br.com.vulcanogames.gamepoint.R;
 import br.com.vulcanogames.gamepoint.fragments.MainView;
@@ -21,10 +22,10 @@ public class Main extends BaseActivity{
 
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState != null)
-            mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
+        //if (savedInstanceState != null)
+          //  mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
 
-        if (mContent == null)
+        //if (mContent == null)
             mContent = new MainView();
 
         setContentView(R.layout.content_frame);
@@ -37,6 +38,11 @@ public class Main extends BaseActivity{
         setSlidingActionBarEnabled(true);
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override

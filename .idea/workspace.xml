@@ -46,6 +46,7 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="game" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
@@ -53,7 +54,7 @@
     <ignored path="GamePoint.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Method.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379719089632" ignored="false" />
-    <file path="/fragment.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379720756741" ignored="false" />
+    <file path="/fragment.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379796832388" ignored="false" />
     <file path="/MethodCallback.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379118885921" ignored="false" />
     <file path="/RequestCallback.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379124497213" ignored="false" />
     <file path="/Response.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379118551239" ignored="false" />
@@ -61,13 +62,13 @@
     <file path="/LoginMethod.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379720244036" ignored="false" />
     <file path="/Login.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379122106194" ignored="false" />
     <file path="/Service.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379719607212" ignored="false" />
-    <file path="/Main.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379372733587" ignored="false" />
+    <file path="/Main.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379893221130" ignored="false" />
     <file path="/ArticleMethod.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379461545868" ignored="false" />
     <file path="/a.dummy" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379198142704" ignored="false" />
     <file path="/MyServiceSettings.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379180177170" ignored="false" />
     <file path="/Article.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379191368789" ignored="false" />
     <file path="/strings.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379185865888" ignored="false" />
-    <file path="/main.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379375146464" ignored="false" />
+    <file path="/main.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379892201751" ignored="false" />
     <file path="$PROJECT_DIR$/gen/br/com/vulcanogames/gamepoint/R.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379268152949" ignored="false" />
     <file path="$PROJECT_DIR$/gen/br/com/vulcanogames/gamepoint/Manifest.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379268152949" ignored="false" />
     <file path="$PROJECT_DIR$/gen/br/com/vulcanogames/gamepoint/BuildConfig.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379193373436" ignored="false" />
@@ -76,12 +77,12 @@
     <file path="/AndroidManifest.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379268148475" ignored="false" />
     <file path="/shadow.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379202088031" ignored="false" />
     <file path="/dimens.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379202719443" ignored="false" />
-    <file path="/BaseActivity.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379270262734" ignored="false" />
+    <file path="/BaseActivity.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379894244461" ignored="false" />
     <file path="/SlidingFragmentActivity.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379257836003" ignored="false" />
-    <file path="/MainView.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379725346368" ignored="false" />
+    <file path="/MainView.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379894387462" ignored="false" />
     <file path="/RandomList.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379269576260" ignored="false" />
     <file path="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/telas/ArticleCallback.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379269716897" ignored="false" />
-    <file path="/Dummy.txt" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379372996964" ignored="false" />
+    <file path="/Dummy.txt" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379862629756" ignored="false" />
     <file path="/About.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379372964822" ignored="false" />
     <file path="/MenuSliding.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379373025911" ignored="false" />
     <file path="/about.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379373511940" ignored="false" />
@@ -90,6 +91,7 @@
     <file path="/RequestError.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379469514197" ignored="false" />
     <file path="/ResponseUtils.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379470492570" ignored="false" />
     <file path="/content_frame.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379638076077" ignored="false" />
+    <file path="/action_refresh_item.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379863181489" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,37 +155,39 @@
       <file leaf-file-name="MainView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/fragments/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="200" column="76" selection-start="5855" selection-end="5855" vertical-scroll-proportion="0.4269006">
+            <state line="102" column="32" selection-start="3088" selection-end="3088" vertical-scroll-proportion="0.27051672">
               <folding>
-                <element signature="e#4076#4325#0" expanded="true" />
-                <element signature="e#4314#4315#0" expanded="true" />
+                <element signature="method#onResume#0;class#MainView#0" expanded="false" />
+                <element signature="method#onStop#0;class#MainView#0" expanded="false" />
+                <element signature="e#2924#3234#0" expanded="true" />
+                <element signature="e#3219#3220#0" expanded="true" />
+                <element signature="method#resetList#0;class#MainView#0" expanded="false" />
+                <element signature="method#loadData#0;class#MainView#0" expanded="false" />
+                <element signature="method#authenticate#0;class#MainView#0" expanded="false" />
+                <element signature="method#loadArticleList#0;class#MainView#0" expanded="false" />
+                <element signature="method#onUnavailableConnection#0;class#MainView#0" expanded="false" />
+                <element signature="method#watchListViewEvents#0;class#MainView#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginMethod.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/LoginMethod.java">
+      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="49" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.0">
+            <state line="7" column="0" selection-start="257" selection-end="257" vertical-scroll-proportion="-3.8888888">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Service.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Service.java">
+      <file leaf-file-name="MenuSliding.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/MenuSliding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="54" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Method.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Method.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="0" selection-start="2556" selection-end="2556" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -192,28 +196,28 @@
       <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="62" column="0" selection-start="1922" selection-end="1922" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#onCreate#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#onOptionsItemSelected#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#getRefreshButton#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#getRefreshAnimation#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#initRefreshButton#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#refresh#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#stopRefresh#0;class#BaseActivity#0" expanded="false" />
+                <element signature="class#BasePagerAdapter#0;class#BaseActivity#0" expanded="false" />
+                <element signature="e#3914#3924#0" expanded="true" />
+                <element signature="method#BasePagerAdapter#0;class#BasePagerAdapter#0;class#BaseActivity#0" expanded="false" />
+              </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_frame.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/content_frame.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="24" selection-start="931" selection-end="931" vertical-scroll-proportion="-14.444445">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="8" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
+            <state line="44" column="25" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -229,21 +233,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/ArticleMethod.java" />
-        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Error.java" />
-        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/RequestError.java" />
-        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/ResponseUtils.java" />
-        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/MyServiceSettings.java" />
-        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/content_frame.xml" />
-        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Method.java" />
-        <option value="$PROJECT_DIR$/tinyapi/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/tinyapi/res/values-pt-rBR/strings.xml" />
         <option value="$PROJECT_DIR$/res/values-pt-rBR/strings.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Service.java" />
         <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/LoginMethod.java" />
+        <option value="$PROJECT_DIR$/res/layout/UnavailableConnection.xml" />
+        <option value="$PROJECT_DIR$/res/layout/content_frame.xml" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/action_refresh_item.xml" />
+        <option value="$PROJECT_DIR$/res/anim/refesh_rotate.xml" />
+        <option value="$PROJECT_DIR$/res/anim/refresh_rotate.xml" />
+        <option value="$PROJECT_DIR$/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/Main.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/BaseActivity.java" />
         <option value="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/fragments/MainView.java" />
       </list>
     </option>
@@ -251,7 +255,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1279" />
-    <option name="height" value="686" />
+    <option name="height" value="681" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -284,6 +288,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,250 +317,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tinyapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinyapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinyapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinyapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinyapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="method" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinyapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values-pt-rBR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinyapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinyapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamepoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamepoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamepoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamepoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values-pt-rBR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GamePoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -574,18 +335,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="anim" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
@@ -613,15 +373,21 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/layout" />
+      <recent name="$PROJECT_DIR$/res/layout-xhdpi" />
+      <recent name="$PROJECT_DIR$/res/layout-mdpi" />
+      <recent name="$PROJECT_DIR$/res/layout-hdpi" />
       <recent name="$PROJECT_DIR$/res" />
-      <recent name="$PROJECT_DIR$/tinyapi/libs" />
-      <recent name="$PROJECT_DIR$/tinyapi/res/values-pt-rBR" />
-      <recent name="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="br.com.vulcanogames.gamepoint.telas" />
       <recent name="com.asccode.tinyapi.method" />
       <recent name="com.asccode.tinyapi" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/drawable-mdpi" />
+      <recent name="$PROJECT_DIR$/res/drawable-hdpi" />
+      <recent name="$PROJECT_DIR$/res/drawable" />
+      <recent name="$PROJECT_DIR$/res/drawable-xhdpi" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.asccode.tinyapi" />
@@ -790,7 +556,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1279" height="686" extended-state="0" />
+    <frame x="0" y="22" width="1279" height="681" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -802,14 +568,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32337433" sideWeight="0.5028432" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24592833" sideWeight="0.24077329" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31978798" sideWeight="0.4971614" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50883394" sideWeight="0.7542579" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31729054" sideWeight="0.4971614" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50445634" sideWeight="0.7542579" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24249797" sideWeight="0.6766784" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32332155" sideWeight="0.49715677" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24249797" sideWeight="0.6809269" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31907308" sideWeight="0.49715677" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19059205" sideWeight="0.6749117" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -886,61 +652,19 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/ResponseUtils.java">
+    <entry file="file://$PROJECT_DIR$/../SlidingMenu-master/slidingMenu/src/com/jeremyfeinstein/slidingmenu/lib/app/SlidingFragmentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="5" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0">
+        <state line="110" column="16" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/MyServiceSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="72" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/content_frame.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="24" selection-start="931" selection-end="931" vertical-scroll-proportion="-14.444445">
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/res/layout/unavailable_connection.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="51" selection-start="414" selection-end="414" vertical-scroll-proportion="0.31437126">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values-pt-rBR/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="51" selection-start="414" selection-end="414" vertical-scroll-proportion="0.31437126">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tinyapi/res/values-pt-rBR/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="56" selection-start="107" selection-end="107" vertical-scroll-proportion="0.08982036">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tinyapi/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="56" selection-start="107" selection-end="107" vertical-scroll-proportion="0.084033616">
+        <state line="5" column="4" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -952,54 +676,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/LoginMethod.java">
+    <entry file="file://$PROJECT_DIR$/../SlidingMenu-master/slidingMenu/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="49" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/Main.java">
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="8" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
+        <state line="19" column="0" selection-start="831" selection-end="831" vertical-scroll-proportion="1.2555066">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Documents/android/sdk/platforms/android-17/android.jar!/android/widget/ArrayAdapter.class">
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="2556" selection-end="2556" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Documents/android/sdk/platforms/android-17/android.jar!/android/os/AsyncTask.class">
+    <entry file="file://$PROJECT_DIR$/res/anim/refresh_rotate.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0">
+        <state line="8" column="34" selection-start="328" selection-end="328" vertical-scroll-proportion="0.36253777">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Documents/android/sdk/platforms/android-17/android.jar!/android/os/Handler.class">
+    <entry file="file://$PROJECT_DIR$/res/layout/action_refresh_item.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="3379" selection-end="3379" vertical-scroll-proportion="0.5794392">
+        <state line="3" column="0" selection-start="110" selection-end="110" vertical-scroll-proportion="0.14802632">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/android/sdk/platforms/android-18/android.jar!/java/lang/Class.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="0" selection-start="5270" selection-end="5270" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="88" selection-start="195" selection-end="195" vertical-scroll-proportion="0.16949153">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="2556" selection-end="2556" vertical-scroll-proportion="0.0">
+        <state line="97" column="0" selection-start="2556" selection-end="2556" vertical-scroll-proportion="-4.83871">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/MenuSliding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="257" selection-end="257" vertical-scroll-proportion="-3.8888888">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="0" selection-start="1922" selection-end="1922" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#onCreate#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#getRefreshButton#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#getRefreshAnimation#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#initRefreshButton#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#refresh#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#stopRefresh#0;class#BaseActivity#0" expanded="false" />
+            <element signature="class#BasePagerAdapter#0;class#BaseActivity#0" expanded="false" />
+            <element signature="e#3914#3924#0" expanded="true" />
+            <element signature="method#BasePagerAdapter#0;class#BasePagerAdapter#0;class#BaseActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/activities/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="25" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/fragments/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="76" selection-start="5855" selection-end="5855" vertical-scroll-proportion="0.4269006">
+        <state line="102" column="32" selection-start="3088" selection-end="3088" vertical-scroll-proportion="0.27051672">
           <folding>
-            <element signature="e#4076#4325#0" expanded="true" />
-            <element signature="e#4314#4315#0" expanded="true" />
+            <element signature="method#onResume#0;class#MainView#0" expanded="false" />
+            <element signature="method#onStop#0;class#MainView#0" expanded="false" />
+            <element signature="e#2924#3234#0" expanded="true" />
+            <element signature="e#3219#3220#0" expanded="true" />
+            <element signature="method#resetList#0;class#MainView#0" expanded="false" />
+            <element signature="method#loadData#0;class#MainView#0" expanded="false" />
+            <element signature="method#authenticate#0;class#MainView#0" expanded="false" />
+            <element signature="method#loadArticleList#0;class#MainView#0" expanded="false" />
+            <element signature="method#onUnavailableConnection#0;class#MainView#0" expanded="false" />
+            <element signature="method#watchListViewEvents#0;class#MainView#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1044,7 +836,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>Android 4.2.2 Platform</last-edited>
+          <last-edited>Android 2.3.3 Google APIs</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

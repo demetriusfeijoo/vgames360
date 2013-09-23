@@ -3,6 +3,11 @@ package br.com.vulcanogames.gamepoint.activities;
 import android.os.Bundle;
 import android.support.v4.app.*;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.Toast;
 import br.com.vulcanogames.gamepoint.MenuSliding;
 import br.com.vulcanogames.gamepoint.R;
 import com.actionbarsherlock.view.Menu;
@@ -25,6 +30,7 @@ public class BaseActivity extends SlidingFragmentActivity {
 
     private int mTitleRes;
     protected ListFragment mFrag;
+    private MenuItem refreshButton;
 
     public BaseActivity(int titleRes){
         mTitleRes = titleRes;
@@ -35,8 +41,6 @@ public class BaseActivity extends SlidingFragmentActivity {
         super.onCreate(savedInstanceState);
 
         setTitle(mTitleRes);
-
-        setActionBarFeatures();
 
         setBehindContentView(R.layout.menu_frame);
         FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
@@ -55,19 +59,18 @@ public class BaseActivity extends SlidingFragmentActivity {
 
     }
 
-    private void setActionBarFeatures() {
-
-        requestWindowFeature( Window.FEATURE_INDETERMINATE_PROGRESS );
-
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
+
         switch(item.getItemId()){
             case android.R.id.home:
                 toggle();
                 return true;
+            case R.id.refresh:
+                refresh();
+                return true;
         }
+
         return onOptionsItemSelected(item);
     }
 
@@ -75,7 +78,74 @@ public class BaseActivity extends SlidingFragmentActivity {
     public boolean onCreateOptionsMenu(Menu menu){
 
         getSupportMenuInflater().inflate(R.menu.main, menu);
+
+        this.initRefreshButton(menu);
+
         return true;
+    }
+
+
+    public MenuItem getRefreshButton(){
+
+        return this.refreshButton;
+
+    }
+
+    private Animation getRefreshAnimation(){
+
+        Animation rotation = AnimationUtils.loadAnimation(getApplication(), R.anim.refresh_rotate);
+
+        rotation.setRepeatCount(Animation.INFINITE);
+
+        return rotation;
+
+
+    }
+
+    private void initRefreshButton( Menu menu ){
+
+        ImageView iv = (ImageView) getLayoutInflater().inflate(R.layout.action_refresh_item, null);
+
+        this.refreshButton = menu.findItem( R.id.refresh );
+
+        if( this.refreshButton != null ){
+            // Ficou muito amarrado..alguém tem que cancelar sempre, mesmo que nao use! Arrumar!!!
+            iv.setAnimation( this.getRefreshAnimation() );
+            this.refreshButton.setActionView(iv);
+        }
+
+    }
+
+    public void refresh(){
+
+        if( this.refreshButton != null ) {
+
+            View actionView = this.refreshButton.getActionView();
+
+            if (actionView != null) {
+
+                actionView.startAnimation(this.getRefreshAnimation());
+
+            }
+
+        }
+
+    }
+
+    public void stopRefresh(){
+
+        if( this.refreshButton != null ) {
+
+            View actionView = this.refreshButton.getActionView();
+
+            if (actionView != null) {
+
+                actionView.clearAnimation();
+
+            }
+
+        }
+
     }
 
     public class BasePagerAdapter extends FragmentPagerAdapter{

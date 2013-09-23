@@ -14,7 +14,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import br.com.vulcanogames.gamepoint.MyServiceSettings;
 import br.com.vulcanogames.gamepoint.R;
+import br.com.vulcanogames.gamepoint.activities.BaseActivity;
+import br.com.vulcanogames.gamepoint.activities.Main;
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.actionbarsherlock.view.MenuItem;
 import com.asccode.tinyapi.RequestCallback;
 import com.asccode.tinyapi.Response;
 import com.asccode.tinyapi.Service;
@@ -46,11 +49,25 @@ public class MainView extends SherlockListFragment {
 
     private final static int REQUEST_ARTICLES_SIZE = 20;
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+
+        articleArrayAdapter = new ArrayAdapter<>( getSherlockActivity(), android.R.layout.simple_list_item_1, articles );
+
+        getListView().setAdapter(articleArrayAdapter);
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
         this.serviceSettings = new MyServiceSettings(getActivity().getSharedPreferences("PREFS", 0));
 
         this.service = new Service(this.serviceSettings, getActivity());
+
+        this.addListenerRefreshButton();
 
         return inflater.inflate(R.layout.main, container, false);
 
@@ -59,9 +76,50 @@ public class MainView extends SherlockListFragment {
     @Override
     public void onResume() {
 
-        this.loadData( this.serviceSettings );
-
         super.onResume();    //To change body of overridden methods use File | Settings | File Templates.
+        this.loadData(this.serviceSettings);
+
+    }
+
+    @Override
+    public void onStop(){
+
+        super.onStop();
+
+    }
+
+    private void addListenerRefreshButton(){
+
+        BaseActivity baseActivity = (BaseActivity) getSherlockActivity();
+
+        MenuItem refreshButton = baseActivity.getRefreshButton();
+
+        if (refreshButton != null) {
+
+            refreshButton.setOnMenuItemClickListener( new MenuItem.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+
+                    resetList();
+
+                    return false;  //To change body of implemented methods use File | Settings | File Templates.
+                }
+            });
+
+        }
+
+    }
+
+    private void resetList(){
+
+        this.page = 0;
+        this.loading = false;
+        this.loadMore = true;
+
+        this.articles.clear();
+
+        this.loadArticleList();
+
     }
 
     private void loadData( ServiceSettings serviceSettings ){
@@ -81,14 +139,14 @@ public class MainView extends SherlockListFragment {
             @Override
             public void onStart() {
 
-                getSherlockActivity().setSupportProgressBarIndeterminateVisibility(true);
+                loading(true);
 
             }
 
             @Override
             public void onSuccess(Response<Login> successResponse){
 
-                getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
+                loading(false);
 
                 loadArticleList();
 
@@ -97,7 +155,7 @@ public class MainView extends SherlockListFragment {
             @Override
             public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
 
-                getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
+                loading(false);
 
             }
         });
@@ -128,7 +186,7 @@ public class MainView extends SherlockListFragment {
 
     private void onUnavailableConnection(){
 
-        this.getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
+        loading(false);
 
         AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
         alert.setTitle(com.asccode.tinyapi.R.string.alertError);
@@ -176,37 +234,41 @@ public class MainView extends SherlockListFragment {
 
     }
 
+    private void loading( boolean state ){
+
+        Main main = (Main) getActivity();
+
+        loading = state;
+
+         if( state )
+             main.refresh();
+         else
+             main.stopRefresh();
+
+
+    }
+
     private RequestCallback articleRequestCallback = new RequestCallback<List<Article>>() {
         @Override
         public void onStart() {
-
-            loading = true;
-
-            getSherlockActivity().setSupportProgressBarIndeterminateVisibility(true);
+            loading(true);
 
         }
 
         @Override
         public void onSuccess(Response<List<Article>> successResponse) {
+
             if( successResponse.getContent().size() > 0 ){
 
                 articles.addAll(successResponse.getContent());
 
                 if( page == 0){
 
-                    articleArrayAdapter = new ArrayAdapter<>( getSherlockActivity(), android.R.layout.simple_list_item_1, articles );
-
-                    getListView().setAdapter(articleArrayAdapter);
-
-                    Toast.makeText( getActivity(), "Carregou "+getListView(), Toast.LENGTH_LONG ).show();
-
                     watchListViewEvents(); // Watch ListView
 
-                }else{
-
-                    articleArrayAdapter.notifyDataSetChanged();
-
                 }
+
+                articleArrayAdapter.notifyDataSetChanged();
 
                 ++page;
 
@@ -216,17 +278,14 @@ public class MainView extends SherlockListFragment {
 
             }
 
-            loading = false;
-
-            getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
+            loading(false);
 
         }
 
         @Override
         public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
 
-            loading = false;
-            getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);
+            loading(false);
 
         }
     };
