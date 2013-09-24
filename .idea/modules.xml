@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GamePoint.iml" filepath="$PROJECT_DIR$/GamePoint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VGames360.iml" filepath="$PROJECT_DIR$/VGames360.iml" />
       <module fileurl="file://$PROJECT_DIR$/../actionbarsherlock/actionbarsherlock.iml" filepath="$PROJECT_DIR$/../actionbarsherlock/actionbarsherlock.iml" />
       <module fileurl="file://$PROJECT_DIR$/../SlidingMenu-master/slidingMenu/slidingMenu.iml" filepath="$PROJECT_DIR$/../SlidingMenu-master/slidingMenu/slidingMenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/tinyapi/tinyapi.iml" filepath="$PROJECT_DIR$/tinyapi/tinyapi.iml" />
