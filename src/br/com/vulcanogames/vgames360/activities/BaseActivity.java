@@ -48,8 +48,9 @@ public class BaseActivity extends SlidingFragmentActivity {
         sm.setFadeDegree(0.35f);
         sm.setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setLogo(R.drawable.logo_action_bar);
     }
 
     @Override

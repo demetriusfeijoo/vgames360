@@ -1,6 +1,7 @@
 package br.com.vulcanogames.vgames360.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,9 +54,21 @@ public class ListMainAdapter extends BaseAdapter {
         if( view == null )
             view = LayoutInflater.from(this.context).inflate(R.layout.lista_main_adapter, null);
 
-        TextView textView = (TextView) view.findViewById( R.id.itemTitle );
+        TextView itemTitle = (TextView) view.findViewById( R.id.itemTitle );
+        TextView feedTitle = (TextView) view.findViewById( R.id.feedTitle );
 
-        textView.setText( this.getItem(i).getTitle() );
+        Typeface robotRegular = Typeface.createFromAsset( this.context.getAssets(), "Roboto-Regular.ttf" );
+        Typeface robotBlackItalic = Typeface.createFromAsset( this.context.getAssets(), "Roboto-Regular.ttf" );
+
+        if( itemTitle != null && feedTitle != null){
+
+            itemTitle.setTypeface( robotRegular );
+            feedTitle.setTypeface( robotBlackItalic );
+
+            itemTitle.setText( this.getItem(i).getTitle() );
+            feedTitle.setText( this.getItem(i).getFeedTitle() );
+
+        }
 
         return view;
 

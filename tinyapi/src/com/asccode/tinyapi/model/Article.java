@@ -3,10 +3,12 @@ package com.asccode.tinyapi.model;
 /**
  * @author <a href="mailto:demetrius.feijoo.91@gmail.com">Demetrius Feijoo Campos</a>
  */
+// Extrair dados de feed para uma classe feed!!!!
 public class Article {
 
     private int id;
     private String title;
+    private String feed_title;
     private int updated;
     private String link;
     private String content;
@@ -20,6 +22,14 @@ public class Article {
         return id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getFeedTitle() {
+        return feed_title;
+    }
+
     public String getContent() {
         return content;
     }
@@ -30,9 +40,5 @@ public class Article {
 
     public int getUpdated() {
         return updated;
-    }
-
-    public String getTitle() {
-        return title;
     }
 }

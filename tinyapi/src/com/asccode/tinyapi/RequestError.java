@@ -24,11 +24,13 @@ public enum RequestError {
     TOO_LONG("TOO LONG [413]"),
     BAD_GATEWAY("BAD GATEWAY [502]"),
     SERVICE_UNAVAILABLE("SERVICE UNAVAILABLE [503]"),
-    GATEWAY_TIMEOUT("GATEWAY TIMEOUT [504]");
+    GATEWAY_TIMEOUT("GATEWAY TIMEOUT [504]"),
+    INTERNAL_ERROR("INTERNAL ERROR");
 
     private String name;
 
-    private RequestError(String name) {
+    RequestError(String name) {
         this.name = name;
     }
+
 }

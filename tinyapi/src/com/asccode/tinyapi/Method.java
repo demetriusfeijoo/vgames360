@@ -1,13 +1,9 @@
 package com.asccode.tinyapi;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.provider.Settings;
 import android.util.Base64;
 import android.util.Log;
 import com.google.gson.*;
@@ -16,9 +12,14 @@ import org.apache.http.StatusLine;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 
+import java.io.IOException;
 import java.net.ConnectException;
+import java.net.SocketTimeoutException;
 import java.util.Map;
 
 /**
@@ -129,8 +130,13 @@ public abstract class Method<ResponseType>{
 
             try {
 
+                // Create Connection Params
+                HttpParams httpParams = new BasicHttpParams();
+                HttpConnectionParams.setConnectionTimeout( httpParams, 30000 );
+                HttpConnectionParams.setSoTimeout( httpParams, 30000 );
+
                 //Create Connection
-                DefaultHttpClient defaultHttpClient = new DefaultHttpClient();
+                DefaultHttpClient defaultHttpClient = new DefaultHttpClient( httpParams );
                 HttpPost httpPost = new HttpPost(Method.this.serviceSettings.getServer());
 
                 httpPost.setHeader("Accept", "application/json");
@@ -168,7 +174,31 @@ public abstract class Method<ResponseType>{
 
                 }
 
+            } catch (SocketTimeoutException e){
+
+                String seq = "";
+                int status = 1;
+                int statusCode = 504;
+
+                String json = String.format("{seq:\"%s\",status:\"%d\",content:{error:\"%d\"}}", seq, status, statusCode);
+
+                try{
+
+                    response = new JsonParser().parse(json).getAsJsonObject();
+
+                }catch ( JsonParseException jsonParseException ){
+
+                }
+
+                e.printStackTrace();
+
+            } catch (IOException e){
+                Log.d( "TinyAPI", "IOException "+e.getMessage() );
+                e.printStackTrace();
+
             } catch (Exception e){
+
+                Log.d( "TinyAPI", "Exception "+e.getMessage() );
 
                 e.printStackTrace();
 
@@ -181,54 +211,72 @@ public abstract class Method<ResponseType>{
         @Override
         protected void onPostExecute(JsonObject result) {
 
-            String seq = result.get("seq").getAsString();
-            int status = result.get("status").getAsInt();
+            if( result != null ){
 
-            if( status == 0 ){
+                String seq = result.get("seq").getAsString();
+                int status = result.get("status").getAsInt();
 
-                ResponseType content = Method.this.parserContent(result.get("content"));
+                if( status == 0 ){
 
-                Response<ResponseType> successResponse = new Response<>(seq, status, content);
+                    ResponseType content = Method.this.parserContent(result.get("content"));
 
-                Method.this.success(successResponse);
+                    Response<ResponseType> successResponse = new Response<>(seq, status, content);
 
-                if( Method.this.requestCallback != null )
-                    Method.this.requestCallback.onSuccess(successResponse);
+                    Method.this.success(successResponse);
 
-            }else{
+                    if( Method.this.requestCallback != null )
+                        Method.this.requestCallback.onSuccess(successResponse);
 
-                Error apiError = null;
+                }else{
 
-                String errorStr = result.get("content").getAsJsonObject().get("error").getAsString();
+                    Error apiError = null;
 
-                if (errorStr.equals("LOGIN_ERROR")) {
+                    String errorStr = result.get("content").getAsJsonObject().get("error").getAsString();
 
-                    apiError = new Error( RequestError.LOGIN_ERROR );
+                    if (errorStr.equals("LOGIN_ERROR")) {
 
-                } else if (errorStr.equals("API_DISABLED")) {
+                        apiError = new Error( RequestError.LOGIN_ERROR );
 
-                    apiError = new Error( RequestError.API_DISABLED );
+                    } else if (errorStr.equals("API_DISABLED")) {
 
-                } else if (errorStr.equals("NOT_LOGGED_IN")) {
+                        apiError = new Error( RequestError.API_DISABLED );
 
-                    apiError = new Error( RequestError.NOT_LOGGED_IN );
+                    } else if (errorStr.equals("NOT_LOGGED_IN")) {
 
-                } else if (errorStr.equals("INCORRECT_USAGE")) {
+                        apiError = new Error( RequestError.NOT_LOGGED_IN );
 
-                    apiError = new Error( RequestError.INCORRECT_USAGE );
+                    } else if (errorStr.equals("INCORRECT_USAGE")) {
 
-                } else if (errorStr.equals("UNKNOWN_METHOD")) {
+                        apiError = new Error( RequestError.INCORRECT_USAGE );
 
-                    apiError = new Error( RequestError.UNKNOWN_METHOD );
+                    } else if (errorStr.equals("UNKNOWN_METHOD")) {
+
+                        apiError = new Error( RequestError.UNKNOWN_METHOD );
+
+                    }
+
+                    Response<Error> errorResponse = null;
+
+                    if( apiError != null ) // Erro na api
+                        errorResponse = new Response<>(seq, status, apiError);
+                    else //Erro de requisicao
+                        errorResponse = new Response<>(seq, status, new Error( httpError( Integer.parseInt(errorStr) ) ));
+
+                    Method.this.error(errorResponse);
+
+                    if( Method.this.requestCallback != null )
+                        Method.this.requestCallback.onError(errorResponse);
 
                 }
 
+            }else{
+
                 Response<Error> errorResponse = null;
 
-                if( apiError != null ) // Erro na api
-                    errorResponse = new Response<>(seq, status, apiError);
-                else //Erro de requisicao
-                    errorResponse = new Response<>(seq, status, new Error( httpError( Integer.parseInt(errorStr) ) ));
+                String seq = "";
+                int status = 1; // Error Criar constantes né??
+
+                errorResponse = new Response<>(seq, status, new Error( RequestError.INTERNAL_ERROR ));
 
                 Method.this.error(errorResponse);
 

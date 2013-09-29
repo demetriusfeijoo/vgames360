@@ -12,10 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.AbsListView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.*;
 import br.com.vulcanogames.vgames360.adapter.ListMainAdapter;
 import br.com.vulcanogames.vgames360.tinyapi.MyServiceSettings;
 import br.com.vulcanogames.vgames360.R;
@@ -44,6 +41,7 @@ import java.util.List;
 
 public class MainView extends SherlockListFragment {
 
+    private View feedbackListItem;
     private MenuItem refreshButton;
     private Service service;
     private ServiceSettings serviceSettings;
@@ -62,7 +60,9 @@ public class MainView extends SherlockListFragment {
 
         this.articleArrayAdapter = new ListMainAdapter(getActivity(), this.articles);
 
+        getListView().addHeaderView(this.feedbackListItem);
         getListView().setAdapter(this.articleArrayAdapter);
+        getListView().setDividerHeight(0);  // Tem como melhorar??
 
     }
 
@@ -70,6 +70,8 @@ public class MainView extends SherlockListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
         setHasOptionsMenu( true );
+
+        this.feedbackListItem = getActivity().getLayoutInflater().inflate(R.layout.feedback_list_frame, null);
 
         this.serviceSettings = new MyServiceSettings(getActivity().getSharedPreferences("PREFS", 0));
 
@@ -83,7 +85,10 @@ public class MainView extends SherlockListFragment {
     public void onResume() {
 
         super.onResume();    //To change body of overridden methods use File | Settings | File Templates.
+
         this.loadData();
+
+        this.removeFeedbackView();
 
     }
 
@@ -123,6 +128,12 @@ public class MainView extends SherlockListFragment {
         menuInflater.inflate(R.menu.main, menu);
 
         this.initRefreshButton(menu);
+
+    }
+
+    private void removeFeedbackView(){
+
+        getListView().removeHeaderView( this.feedbackListItem );
 
     }
 
@@ -174,6 +185,17 @@ public class MainView extends SherlockListFragment {
             }
 
         }
+
+    }
+
+    private void showFeedbackMessage(String message){
+
+        TextView feedbackMessage = (TextView) this.feedbackListItem.findViewById(R.id.feedbackMessage);
+
+        feedbackMessage.setText( message );
+        feedbackMessage.setVisibility(1);
+
+        getListView().addHeaderView( this.feedbackListItem );
 
     }
 
@@ -248,6 +270,7 @@ public class MainView extends SherlockListFragment {
                 public void onStart() {
 
                     refresh();
+                    removeFeedbackView();
 
                 }
 
@@ -263,8 +286,8 @@ public class MainView extends SherlockListFragment {
                 @Override
                 public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
 
-
                     stopRefresh();
+                    showFeedbackMessage(errorResponse.getContent().getError().name());
 
                 }
             });
@@ -295,14 +318,21 @@ public class MainView extends SherlockListFragment {
 
     private void onUnavailableConnection(){
 
-        stopRefresh();
+        this.loadMore = false;
 
         AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
         alert.setTitle(com.asccode.tinyapi.R.string.alertError);
-        alert.setCancelable(true);
+        alert.setCancelable(false);
         alert.setMessage(R.string.unavailableNetwork);
         alert.setIcon(android.R.drawable.ic_dialog_alert);
-        alert.setNegativeButton(R.string.negativeAlertButton, null);
+        alert.setNegativeButton(R.string.negativeAlertButton, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                stopRefresh();
+
+            }
+        });
         alert.setPositiveButton(R.string.positiveAlertButton, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -348,6 +378,9 @@ public class MainView extends SherlockListFragment {
         public void onStart() {
 
             refresh();
+            removeFeedbackView();
+            //Toast.makeText( getActivity(), "OnStart Article", Toast.LENGTH_SHORT ).show();
+
 
         }
 
@@ -374,6 +407,8 @@ public class MainView extends SherlockListFragment {
 
             }
 
+            //Toast.makeText( getActivity(), "OnSuccess Article", Toast.LENGTH_SHORT ).show();
+
             stopRefresh();
 
         }
@@ -382,6 +417,9 @@ public class MainView extends SherlockListFragment {
         public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
 
             stopRefresh();
+            showFeedbackMessage(errorResponse.getContent().getError().name());
+            //Toast.makeText( getActivity(), "onError Article", Toast.LENGTH_SHORT ).show();
+
 
         }
     };
