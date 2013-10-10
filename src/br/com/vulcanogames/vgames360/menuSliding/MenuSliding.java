@@ -1,4 +1,4 @@
-package br.com.vulcanogames.vgames360.menuSliding;
+package br.com.vulcanogames.vgames360.menusliding;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +15,7 @@ import br.com.vulcanogames.vgames360.fragments.MainView;
 
 public class MenuSliding extends ListFragment {
 	
-	String[] list_contents = {"News", "Sobre"};
+	String[] list_contents = {};
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 

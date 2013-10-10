@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">VGames360</string>
+    <string name="app_name">VGames360º</string>
     <string name="noAvailableData">No Available Data</string>
     <string name="btnReload">Tentar Novamente</string>
     <string name="unavailableNetwork">Conexão Indisponível! Deseja ativar o seu wi-fi?</string>

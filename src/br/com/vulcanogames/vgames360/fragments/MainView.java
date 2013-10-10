@@ -1,5 +1,6 @@
 package br.com.vulcanogames.vgames360.fragments;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
+import br.com.vulcanogames.vgames360.activities.Main;
 import br.com.vulcanogames.vgames360.adapter.ListMainAdapter;
 import br.com.vulcanogames.vgames360.tinyapi.MyServiceSettings;
 import br.com.vulcanogames.vgames360.R;
@@ -102,16 +104,24 @@ public class MainView extends SherlockListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-        Article selectedArticle = this.articles.get( position );
+            Activity activity = getActivity();
 
-        if( selectedArticle != null  ){
+            if( activity instanceof Main){
 
-            Intent intent = new Intent( Intent.ACTION_VIEW );
-            intent.setData(Uri.parse( selectedArticle.getLink() ));
+                Main main = (Main) activity;
 
-            startActivity( intent );
+                Article selectedArticle = this.articles.get( position );
 
-        }
+                if( selectedArticle != null  ){
+
+                    ArticleView articleView = new ArticleView(selectedArticle);
+
+                    main.switchContent(articleView);
+
+                }
+
+            }
+
 
     }
 
@@ -379,8 +389,6 @@ public class MainView extends SherlockListFragment {
 
             refresh();
             removeFeedbackView();
-            //Toast.makeText( getActivity(), "OnStart Article", Toast.LENGTH_SHORT ).show();
-
 
         }
 
@@ -407,8 +415,6 @@ public class MainView extends SherlockListFragment {
 
             }
 
-            //Toast.makeText( getActivity(), "OnSuccess Article", Toast.LENGTH_SHORT ).show();
-
             stopRefresh();
 
         }
@@ -418,8 +424,6 @@ public class MainView extends SherlockListFragment {
 
             stopRefresh();
             showFeedbackMessage(errorResponse.getContent().getError().name());
-            //Toast.makeText( getActivity(), "onError Article", Toast.LENGTH_SHORT ).show();
-
 
         }
     };

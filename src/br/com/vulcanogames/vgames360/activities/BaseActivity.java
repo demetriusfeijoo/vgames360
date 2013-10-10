@@ -3,8 +3,9 @@ package br.com.vulcanogames.vgames360.activities;
 import android.os.Bundle;
 import android.support.v4.app.*;
 import android.support.v4.view.ViewPager;
-import br.com.vulcanogames.vgames360.menuSliding.MenuSliding;
+import br.com.vulcanogames.vgames360.menusliding.MenuSliding;
 import br.com.vulcanogames.vgames360.R;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
@@ -20,7 +21,7 @@ import java.util.List;
  * Time: 11:25
  * To change this template use File | Settings | File Templates.
  */
-public class BaseActivity extends SlidingFragmentActivity {
+public class BaseActivity extends /*SlidingFragmentActivity*/ SherlockFragmentActivity {
 
     private int mTitleRes;
     protected ListFragment mFrag;
@@ -34,7 +35,7 @@ public class BaseActivity extends SlidingFragmentActivity {
         super.onCreate(savedInstanceState);
 
         setTitle(mTitleRes);
-
+             /*
         setBehindContentView(R.layout.menu_frame);
         FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
         mFrag =  new MenuSliding();
@@ -47,7 +48,7 @@ public class BaseActivity extends SlidingFragmentActivity {
         sm.setBehindOffset(60);
         sm.setFadeDegree(0.35f);
         sm.setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
-
+             */
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setLogo(R.drawable.logo_action_bar);
@@ -58,7 +59,7 @@ public class BaseActivity extends SlidingFragmentActivity {
 
         switch(item.getItemId()){
             case android.R.id.home:
-                toggle();
+               // toggle();
                 return true;
         }
 

@@ -3,7 +3,7 @@ package br.com.vulcanogames.vgames360.activities;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import br.com.vulcanogames.vgames360.menuSliding.MenuSliding;
+import br.com.vulcanogames.vgames360.menusliding.MenuSliding;
 import br.com.vulcanogames.vgames360.R;
 import br.com.vulcanogames.vgames360.fragments.MainView;
 
@@ -30,11 +30,11 @@ public class Main extends BaseActivity{
         setContentView(R.layout.content_frame);
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, mContent).commit();
 
-        setBehindContentView(R.layout.menu_frame);
-        getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new MenuSliding()).commit();
+        //setBehindContentView(R.layout.menu_frame);
+        //getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new MenuSliding()).commit();
 
-        getSlidingMenu().setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
-        setSlidingActionBarEnabled(true);
+        //getSlidingMenu().setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
+        //setSlidingActionBarEnabled(true);
 
 
     }
@@ -57,8 +57,8 @@ public class Main extends BaseActivity{
 
         mContent = fragment;
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
-        getSlidingMenu().showContent();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack(null).commit();
+        //getSlidingMenu().showContent();
 
     }
 
