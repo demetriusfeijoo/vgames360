@@ -213,7 +213,7 @@ public abstract class Method<ResponseType>{
 
             if( result != null ){
 
-                String seq = result.get("seq").getAsString();
+                String seq = "";// result.get("seq").getAsString();
                 int status = result.get("status").getAsInt();
 
                 if( status == 0 ){

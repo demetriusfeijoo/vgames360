@@ -80,10 +80,10 @@ public class BaseActivity extends /*SlidingFragmentActivity*/ SherlockFragmentAc
         public BasePagerAdapter(FragmentManager fm, ViewPager vp){
             super(fm);
             mPager = vp;
-            mPager.setAdapter(this); /*
+            mPager.setAdapter(this);
             for (int i = 0; i < 3; i++){
                 addTab(new MenuSliding());
-            } */
+            }
         }
 
         public void addTab(Fragment frag){

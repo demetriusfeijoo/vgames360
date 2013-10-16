@@ -57,7 +57,7 @@ public class Main extends BaseActivity{
 
         mContent = fragment;
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack(null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
         //getSlidingMenu().showContent();
 
     }

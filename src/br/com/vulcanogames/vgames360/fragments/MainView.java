@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,18 +14,15 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
+import br.com.vulcanogames.vgames360.R;
 import br.com.vulcanogames.vgames360.activities.Main;
 import br.com.vulcanogames.vgames360.adapter.ListMainAdapter;
 import br.com.vulcanogames.vgames360.tinyapi.MyServiceSettings;
-import br.com.vulcanogames.vgames360.R;
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-import com.asccode.tinyapi.RequestCallback;
-import com.asccode.tinyapi.Response;
-import com.asccode.tinyapi.Service;
-import com.asccode.tinyapi.ServiceSettings;
+import com.asccode.tinyapi.*;
 import com.asccode.tinyapi.model.Article;
 import com.asccode.tinyapi.model.Login;
 
@@ -43,43 +40,58 @@ import java.util.List;
 
 public class MainView extends SherlockListFragment {
 
-    private View feedbackListItem;
+    private TextView feedbackMsg;
     private MenuItem refreshButton;
     private Service service;
     private ServiceSettings serviceSettings;
     private List<Article> articles = new ArrayList<>(REQUEST_ARTICLES_SIZE);
     private ListMainAdapter articleArrayAdapter;
+    private int loginRetry = 0;
     private int page = 0;
     private boolean loading = false;
     private boolean loadMore = true;
+    private boolean mAlreadyLoaded = false;
 
+    private final static int LIMIT_LOGIN_RETRY = 5;
     private final static int REQUEST_ARTICLES_SIZE = 20;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
+        super.onActivityCreated(savedInstanceState);
+
+        this.feedbackMsg = (TextView) getActivity().findViewById(R.id.feedbackMsg);
 
         this.articleArrayAdapter = new ListMainAdapter(getActivity(), this.articles);
 
-        getListView().addHeaderView(this.feedbackListItem);
         getListView().setAdapter(this.articleArrayAdapter);
         getListView().setDividerHeight(0);  // Tem como melhorar??
 
+        watchListViewEvents();
+
+        this.init();
+
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
-        setHasOptionsMenu( true );
+        return inflater.inflate(R.layout.main, container, false);
 
-        this.feedbackListItem = getActivity().getLayoutInflater().inflate(R.layout.feedback_list_frame, null);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
+
+        setHasOptionsMenu(true);
 
         this.serviceSettings = new MyServiceSettings(getActivity().getSharedPreferences("PREFS", 0));
 
         this.service = new Service(this.serviceSettings, getActivity());
-
-        return inflater.inflate(R.layout.main, container, false);
 
     }
 
@@ -88,16 +100,7 @@ public class MainView extends SherlockListFragment {
 
         super.onResume();    //To change body of overridden methods use File | Settings | File Templates.
 
-        this.loadData();
-
-        this.removeFeedbackView();
-
-    }
-
-    @Override
-    public void onStop(){
-
-        super.onStop();
+        this.hideFeedbackMessage();
 
     }
 
@@ -116,7 +119,7 @@ public class MainView extends SherlockListFragment {
 
                     ArticleView articleView = new ArticleView(selectedArticle);
 
-                    main.switchContent(articleView);
+                    main.getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, articleView, "articleView").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack("").commit();
 
                 }
 
@@ -141,9 +144,38 @@ public class MainView extends SherlockListFragment {
 
     }
 
-    private void removeFeedbackView(){
+    @Override
+    public void onStop() {
 
-        getListView().removeHeaderView( this.feedbackListItem );
+        super.onStop();
+
+        this.stopRefreshButton();
+
+    }
+
+    private void init(){
+
+        if( !this.mAlreadyLoaded ){
+
+            this.mAlreadyLoaded = true;
+            this.refreshButton();
+            this.reloadList();
+
+        }
+
+    }
+
+
+    private void showFeedbackMessage(String message){
+
+        this.feedbackMsg.setText(message);
+        this.feedbackMsg.setVisibility(View.VISIBLE);
+
+    }
+
+    private void hideFeedbackMessage(){
+
+        this.feedbackMsg.setVisibility(View.GONE);
 
     }
 
@@ -160,18 +192,17 @@ public class MainView extends SherlockListFragment {
 
     private void initRefreshButton( Menu menu ){
 
-        ImageView iv = (ImageView) getActivity().getLayoutInflater().inflate(R.layout.action_refresh_item, null);
+            ImageView iv = (ImageView) getActivity().getLayoutInflater().inflate(R.layout.action_refresh_item, null);
 
-        this.refreshButton = menu.findItem( R.id.refresh );
+            this.refreshButton = menu.findItem( R.id.refresh );
 
-        if( this.refreshButton != null ){
+            if( this.refreshButton != null ){
 
-            iv.setAnimation( this.getRefreshAnimation() );
-            this.refreshButton.setActionView(iv);
+                this.refreshButton.setActionView(iv);
 
-            this.addListenerRefreshButton();
+                this.addListenerRefreshButton();
 
-        }
+            }
 
     }
 
@@ -198,20 +229,7 @@ public class MainView extends SherlockListFragment {
 
     }
 
-    private void showFeedbackMessage(String message){
-
-        TextView feedbackMessage = (TextView) this.feedbackListItem.findViewById(R.id.feedbackMessage);
-
-        feedbackMessage.setText( message );
-        feedbackMessage.setVisibility(1);
-
-        getListView().addHeaderView( this.feedbackListItem );
-
-    }
-
-    private void refresh(){
-
-        this.loading = true;
+    private void refreshButton(){
 
         if( this.refreshButton != null ) {
 
@@ -227,9 +245,7 @@ public class MainView extends SherlockListFragment {
 
     }
 
-    private void stopRefresh(){
-
-        this.loading = false;
+    private void stopRefreshButton(){
 
         if( this.refreshButton != null ) {
 
@@ -249,16 +265,24 @@ public class MainView extends SherlockListFragment {
 
         if( !this.loading ){
 
-            this.page = 0;
-            this.loading = false;
-            this.loadMore = true;
+            this.resetAtributos();
 
-            this.articles.clear();
             this.articleArrayAdapter.notifyDataSetChanged();
 
             this.loadData();
 
         }
+
+    }
+
+    private void resetAtributos(){
+
+        this.page = 0;
+        this.loading = false;
+        this.loadMore = true;
+        this.loginRetry = 0;
+
+        this.articles.clear();
 
     }
 
@@ -275,19 +299,25 @@ public class MainView extends SherlockListFragment {
 
         try{
 
+            this.serviceSettings.setSessionId("");
+
             service.authenticate( new RequestCallback<Login>() {
                 @Override
                 public void onStart() {
 
-                    refresh();
-                    removeFeedbackView();
+                    loading = true;
+
+                    refreshButton();
+                    hideFeedbackMessage();
 
                 }
 
                 @Override
                 public void onSuccess(Response<Login> successResponse){
 
-                    stopRefresh();
+                    loading = false;
+
+                    stopRefreshButton();
 
                     loadArticleList();
 
@@ -296,7 +326,9 @@ public class MainView extends SherlockListFragment {
                 @Override
                 public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
 
-                    stopRefresh();
+                    loading = false;
+
+                    stopRefreshButton();
                     showFeedbackMessage(errorResponse.getContent().getError().name());
 
                 }
@@ -339,7 +371,7 @@ public class MainView extends SherlockListFragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                stopRefresh();
+                stopRefreshButton();
 
             }
         });
@@ -371,7 +403,7 @@ public class MainView extends SherlockListFragment {
 
                 boolean nextItemNotExists = supposedNextItem >= totalItemCount;
 
-                if( !loading && loadMore && nextItemNotExists ){
+                if( !loading && loadMore && nextItemNotExists && totalItemCount > 0){
 
                     loadArticleList();
 
@@ -387,8 +419,10 @@ public class MainView extends SherlockListFragment {
         @Override
         public void onStart() {
 
-            refresh();
-            removeFeedbackView();
+            loading = true;
+
+            refreshButton();
+            hideFeedbackMessage();
 
         }
 
@@ -398,12 +432,6 @@ public class MainView extends SherlockListFragment {
             if( successResponse.getContent().size() > 0 ){
 
                 articles.addAll(successResponse.getContent());
-
-                if( page == 0){
-
-                    watchListViewEvents(); // Watch ListView
-
-                }
 
                 articleArrayAdapter.notifyDataSetChanged();
 
@@ -415,15 +443,38 @@ public class MainView extends SherlockListFragment {
 
             }
 
-            stopRefresh();
+            loading = false;
+
+            stopRefreshButton();
 
         }
 
         @Override
         public void onError(Response<com.asccode.tinyapi.Error> errorResponse) {
 
-            stopRefresh();
-            showFeedbackMessage(errorResponse.getContent().getError().name());
+            loading = false;
+
+            stopRefreshButton();
+
+            // Diz que está logado na aplicativo porém não no servidor. Pede para autenticar de novo!
+            if( errorResponse.getContent().getError().equals(RequestError.NOT_LOGGED_IN) ){
+
+                if( MainView.LIMIT_LOGIN_RETRY > loginRetry ){
+
+                   authenticate();
+
+                    ++loginRetry;
+
+                }
+
+                showFeedbackMessage(getString(R.string.not_logged_in));
+
+            }else {
+
+                showFeedbackMessage(errorResponse.getContent().getError().name());
+
+            }
+
 
         }
     };
