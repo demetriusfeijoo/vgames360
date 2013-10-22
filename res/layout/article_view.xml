@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<WebView xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:id="@+id/articleWebview"
-        />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        <Button
+                android:id="@+id/visit_page"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="20dp"
+                android:text="Visitar Site"
+                android:gravity="center"
+                android:layout_gravity="center"
+                />
+
+    </ScrollView>
+
+</LinearLayout>

@@ -18,6 +18,7 @@
     <orderEntry type="module" module-name="tinyapi" />
     <orderEntry type="module" module-name="slidingMenu" />
     <orderEntry type="library" name="android-support-v4" level="project" />
+    <orderEntry type="library" name="libGoogleAnalyticsServices" level="project" />
   </component>
 </module>
 

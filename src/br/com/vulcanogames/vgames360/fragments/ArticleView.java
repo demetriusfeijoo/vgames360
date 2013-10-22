@@ -1,14 +1,19 @@
 package br.com.vulcanogames.vgames360.fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.Toast;
 import br.com.vulcanogames.vgames360.R;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.asccode.tinyapi.model.Article;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,11 +24,21 @@ import com.asccode.tinyapi.model.Article;
  */
 public class ArticleView extends SherlockFragment {
 
-    private final Article article;
-    private WebView webView;
+    private Article article;
+
+    public ArticleView() {
+
+    }
 
     public ArticleView(Article article) {
         this.article = article;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -38,12 +53,31 @@ public class ArticleView extends SherlockFragment {
 
         super.onViewCreated(view, savedInstanceState);
 
-        this.webView = (WebView) view.findViewById( R.id.articleWebview );
+        final Button visitPage = (Button) getActivity().findViewById(R.id.visit_page);
 
-        this.webView.loadUrl(this.article.getLink());
-        this.webView.getSettings().setBlockNetworkImage(false);
-        this.webView.getSettings().setLoadsImagesAutomatically(true);
-        this.webView.getSettings().setJavaScriptEnabled(true);
+        visitPage.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                EasyTracker easyTracker = EasyTracker.getInstance(getActivity());
+
+                easyTracker.send(MapBuilder
+                        .createEvent("ui_action",       // Event category (required)
+                                "button_press",         // Event action (required)
+                                "visitPage",            // Event label
+                                null)                   // Event value
+                        .build()
+                );
+
+                Intent intent = new Intent( Intent.ACTION_VIEW );
+                intent.setData( Uri.parse(article.getLink()) );
+
+                startActivity( intent );
+
+            }
+
+        });
 
     }
 }

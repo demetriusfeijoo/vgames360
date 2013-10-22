@@ -119,6 +119,8 @@ public class MainView extends SherlockListFragment {
 
                     ArticleView articleView = new ArticleView(selectedArticle);
 
+                    main.mContent = articleView;
+
                     main.getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, articleView, "articleView").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack("").commit();
 
                 }
