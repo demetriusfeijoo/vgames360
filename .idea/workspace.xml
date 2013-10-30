@@ -46,14 +46,14 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="VGames" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea7f5ab-9834-40d9-bb87-91020496f27f" name="Default" comment="" />
     <ignored path="GamePoint.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Method.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1381522236612" ignored="false" />
-    <file path="/fragment.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1382485481317" ignored="false" />
+    <file path="/fragment.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1383092975197" ignored="false" />
     <file path="/MethodCallback.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379118885921" ignored="false" />
     <file path="/RequestCallback.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379124497213" ignored="false" />
     <file path="/Response.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379118551239" ignored="false" />
@@ -61,21 +61,21 @@
     <file path="/LoginMethod.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379720244036" ignored="false" />
     <file path="/Login.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379122106194" ignored="false" />
     <file path="/Service.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379719607212" ignored="false" />
-    <file path="/Main.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1382483686730" ignored="false" />
+    <file path="/Main.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1383092866812" ignored="false" />
     <file path="/ArticleMethod.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1380066653038" ignored="false" />
     <file path="/a.dummy" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379198142704" ignored="false" />
     <file path="/MyServiceSettings.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379180177170" ignored="false" />
-    <file path="/Article.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1380067177277" ignored="false" />
+    <file path="/Article.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1383091619528" ignored="false" />
     <file path="/strings.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1380756131048" ignored="false" />
     <file path="/main.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1381880926695" ignored="false" />
-    <file path="$PROJECT_DIR$/tinyapi/gen/com/asccode/tinyapi/R.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379193246065" ignored="false" />
-    <file path="$PROJECT_DIR$/tinyapi/gen/com/asccode/tinyapi/Manifest.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379193246065" ignored="false" />
+    <file path="$PROJECT_DIR$/tinyapi/gen/com/asccode/tinyapi/R.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1383092314748" ignored="false" />
+    <file path="$PROJECT_DIR$/tinyapi/gen/com/asccode/tinyapi/Manifest.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1383092314748" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1380417238653" ignored="false" />
     <file path="/shadow.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379202088031" ignored="false" />
     <file path="/dimens.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379202719443" ignored="false" />
     <file path="/BaseActivity.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1380983773603" ignored="false" />
     <file path="/SlidingFragmentActivity.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379257836003" ignored="false" />
-    <file path="/MainView.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1382481973755" ignored="false" />
+    <file path="/MainView.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1383092736902" ignored="false" />
     <file path="/RandomList.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379269576260" ignored="false" />
     <file path="$PROJECT_DIR$/src/br/com/vulcanogames/gamepoint/telas/ArticleCallback.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1379269716897" ignored="false" />
     <file path="/Dummy.txt" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1380807183447" ignored="false" />
@@ -103,6 +103,7 @@
     <file path="$PROJECT_DIR$/../actionbarsherlock/gen/com/actionbarsherlock/BuildConfig.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1382482925992" ignored="false" />
     <file path="$PROJECT_DIR$/gen/br/com/vulcanogames/vgames360/BuildConfig.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1382482925992" ignored="false" />
     <file path="/analytics.xml" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1382483099952" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/br/com/vulcanogames/vgames360/R.java" changelist="eea7f5ab-9834-40d9-bb87-91020496f27f" time="1383092314748" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,10 +164,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainView.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/fragments/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="0" selection-start="4717" selection-end="4717" vertical-scroll-proportion="0.33333334">
+            <state line="158" column="35" selection-start="4413" selection-end="4432" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Article.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/model/Article.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="44" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,56 +184,20 @@
       </file>
       <file leaf-file-name="article_view.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/article_view.xml">
-          <provider editor-type-id="android-designer">
+          <provider editor-type-id="text-editor">
+            <state line="14" column="43" selection-start="429" selection-end="439" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="43" selection-start="429" selection-end="439" vertical-scroll-proportion="-6.814815">
-              <folding />
-            </state>
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="59" selection-start="1455" selection-end="1455" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Handler.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Documents/android/sdk/platforms/android-18/android.jar!/android/os/Handler.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="0" selection-start="3379" selection-end="3379" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="analytics.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/analytics.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="46" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/BaseActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="52" selection-start="1822" selection-end="1889" vertical-scroll-proportion="0.0">
+            <state line="61" column="96" selection-start="1873" selection-end="1873" vertical-scroll-proportion="0.6270492">
               <folding />
             </state>
           </provider>
@@ -232,19 +206,16 @@
       <file leaf-file-name="ArticleView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/fragments/ArticleView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="79" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1494#2279#0" expanded="true" />
-                <element signature="e#2267#2268#0" expanded="true" />
-              </folding>
+            <state line="51" column="66" selection-start="1272" selection-end="1308" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="About.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/fragments/About.java">
+      <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
+            <state line="73" column="4" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -264,29 +235,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/RequestError.java" />
         <option value="$PROJECT_DIR$/res/layout/lista_main_adapter.xml" />
         <option value="$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/adapter/ListMainAdapter.java" />
         <option value="$PROJECT_DIR$/res/values-pt-rBR/strings.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/tinyapi/ArticleCallback.java" />
         <option value="$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/menusliding/MenuSliding.java" />
-        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/BaseActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/feedback_list_frame.xml" />
         <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Method.java" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/res/layout/article_view.xml" />
         <option value="$PROJECT_DIR$/res/values/analytics.xml" />
         <option value="$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/fragments/ArticleView.java" />
-        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/Main.java" />
+        <option value="$PROJECT_DIR$/res/layout/article_view.xml" />
+        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/model/Article.java" />
         <option value="$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/fragments/MainView.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1279" />
-    <option name="height" value="681" />
+    <option name="width" value="1280" />
+    <option name="height" value="689" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -320,6 +291,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -335,6 +307,68 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="GamePoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GamePoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GamePoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tinyapi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GamePoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GamePoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tinyapi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tinyapi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GamePoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GamePoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tinyapi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tinyapi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,6 +411,10 @@
               <option name="myItemId" value="vgames360" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menusliding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -397,6 +435,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fragments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GamePoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GamePoint" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vgames360" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -506,7 +562,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -521,7 +576,7 @@
     <property name="recentsLimit" value="5" />
     <property name="ExportedModule" value="VGames360" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/libGoogleAnalyticsServices.jar!/" />
-    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
+    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -529,11 +584,11 @@
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="android_4_2_2" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -724,33 +779,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1279" height="681" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1280" height="689" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294893" sideWeight="0.67736185" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32337433" sideWeight="0.5028432" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24592833" sideWeight="0.24077329" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31095406" sideWeight="0.4971614" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.50089127" sideWeight="0.7542579" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3075571" sideWeight="0.4971614" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49912128" sideWeight="0.7542579" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32798573" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979724" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24249797" sideWeight="0.49910873" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31272084" sideWeight="0.49715677" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19059205" sideWeight="0.6749117" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14181523" sideWeight="0.50087875" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31107205" sideWeight="0.49715677" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1904376" sideWeight="0.5026178" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979724" sideWeight="0.68270946" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2189781" sideWeight="0.6749117" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21880065" sideWeight="0.5026178" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294893" sideWeight="0.67736185" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32332155" sideWeight="0.49959448" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39929327" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -820,31 +875,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/tinyapi/libs/gson-2.2.4.jar!/com/google/gson/JsonElement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.68899524" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/tinyapi/MyServiceSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/method/ArticleMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="36" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/Method.java">
@@ -853,20 +891,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/content_frame.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="13" selection-start="52" selection-end="228" vertical-scroll-proportion="0.048859935">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="52" selection-start="1822" selection-end="1889" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png">
@@ -874,19 +905,14 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/fragments/About.java">
+    <entry file="jar://$USER_HOME$/Documents/android/sdk/platforms/android-18/android.jar!/android/os/Handler.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="78" column="0" selection-start="3379" selection-end="3379" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/article_view.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/res/values/analytics.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="43" selection-start="429" selection-end="439" vertical-scroll-proportion="-6.814815">
+        <state line="5" column="46" selection-start="247" selection-end="247" vertical-scroll-proportion="0.18287937">
           <folding />
         </state>
       </provider>
@@ -898,40 +924,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/analytics.xml">
+    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/fragments/About.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="46" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+        <state line="16" column="13" selection-start="430" selection-end="430" vertical-scroll-proportion="0.4163424">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../actionbarsherlock/src/com/actionbarsherlock/app/SherlockFragmentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="0" selection-start="2359" selection-end="2359" vertical-scroll-proportion="-9.049383" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/menusliding/MenuSliding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="542" selection-end="542" vertical-scroll-proportion="0.16620499">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="4" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/article_view.xml">
+      <provider editor-type-id="text-editor">
+        <state line="14" column="43" selection-start="429" selection-end="439" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/fragments/ArticleView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="79" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1494#2279#0" expanded="true" />
-            <element signature="e#2267#2268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="59" selection-start="1455" selection-end="1455" vertical-scroll-proportion="0.0">
+        <state line="51" column="66" selection-start="1272" selection-end="1308" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Documents/android/sdk/platforms/android-18/android.jar!/android/os/Handler.class">
+    <entry file="file://$PROJECT_DIR$/tinyapi/src/com/asccode/tinyapi/model/Article.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="3379" selection-end="3379" vertical-scroll-proportion="0.0">
+        <state line="8" column="44" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/fragments/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="0" selection-start="4717" selection-end="4717" vertical-scroll-proportion="0.33333334">
+        <state line="158" column="35" selection-start="4413" selection-end="4432" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vulcanogames/vgames360/activities/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="96" selection-start="1873" selection-end="1873" vertical-scroll-proportion="0.6270492">
           <folding />
         </state>
       </provider>

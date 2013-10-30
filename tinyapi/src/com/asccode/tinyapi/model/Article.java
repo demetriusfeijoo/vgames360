@@ -1,10 +1,12 @@
 package com.asccode.tinyapi.model;
 
+import java.io.Serializable;
+
 /**
  * @author <a href="mailto:demetrius.feijoo.91@gmail.com">Demetrius Feijoo Campos</a>
  */
 // Extrair dados de feed para uma classe feed!!!!
-public class Article {
+public class Article implements Serializable{
 
     private int id;
     private String title;

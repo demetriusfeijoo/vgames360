@@ -3,6 +3,8 @@ package br.com.vulcanogames.vgames360.activities;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
+import android.widget.Toast;
 import br.com.vulcanogames.vgames360.menusliding.MenuSliding;
 import br.com.vulcanogames.vgames360.R;
 import br.com.vulcanogames.vgames360.fragments.MainView;
@@ -22,14 +24,20 @@ public class Main extends BaseActivity{
 
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState != null)
+        setContentView(R.layout.content_frame);
+
+        if (savedInstanceState != null) {
+
             mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
 
-        if (mContent == null)
-            mContent = new MainView();
+        }
 
-        setContentView(R.layout.content_frame);
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, mContent).commit();
+        if (mContent == null) {
+            mContent = new MainView();
+        }
+
+        if (savedInstanceState == null)
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, mContent).commit();
 
         //setBehindContentView(R.layout.menu_frame);
         //getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new MenuSliding()).commit();
@@ -37,23 +45,6 @@ public class Main extends BaseActivity{
         //getSlidingMenu().setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
         //setSlidingActionBarEnabled(true);
 
-
-    }
-
-    @Override
-    protected void onStart(){
-
-        super.onStart();
-
-        EasyTracker.getInstance(this).activityStart(this);
-    }
-
-    @Override
-    protected void onStop(){
-
-        super.onStop();
-
-        EasyTracker.getInstance(this).activityStop(this);
 
     }
 
@@ -67,6 +58,8 @@ public class Main extends BaseActivity{
 
         super.onSaveInstanceState(outState);
 
+        // O Fragmento que é passado como argumento, deve existir na pilha de fragmentos ainda. Ele não pode ter sido destruído. ;)
+        // É bom salvar o estado do fragmento também no próprio fragmento em onSaveInstanceState
         getSupportFragmentManager().putFragment(outState, "mContent", mContent);
 
     }

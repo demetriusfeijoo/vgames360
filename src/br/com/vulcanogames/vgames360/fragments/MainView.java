@@ -56,11 +56,21 @@ public class MainView extends SherlockListFragment {
     private final static int REQUEST_ARTICLES_SIZE = 20;
 
     @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+
+        super.onViewCreated(view, savedInstanceState);
+
+        this.feedbackMsg = (TextView) view.findViewById(R.id.feedbackMsg);
+
+    }
+
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
 
         super.onActivityCreated(savedInstanceState);
 
-        this.feedbackMsg = (TextView) getActivity().findViewById(R.id.feedbackMsg);
+        if( savedInstanceState != null )
+            this.restoreFragmentValues(savedInstanceState);
 
         this.articleArrayAdapter = new ListMainAdapter(getActivity(), this.articles);
 
@@ -107,25 +117,15 @@ public class MainView extends SherlockListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-            Activity activity = getActivity();
-
-            if( activity instanceof Main){
-
-                Main main = (Main) activity;
-
                 Article selectedArticle = this.articles.get( position );
 
                 if( selectedArticle != null  ){
 
                     ArticleView articleView = new ArticleView(selectedArticle);
 
-                    main.mContent = articleView;
-
-                    main.getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, articleView, "articleView").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack("").commit();
+                    getSherlockActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, articleView, "articleView").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack("").commit();
 
                 }
-
-            }
 
 
     }
@@ -152,6 +152,31 @@ public class MainView extends SherlockListFragment {
         super.onStop();
 
         this.stopRefreshButton();
+
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+
+        super.onSaveInstanceState(outState);
+
+        outState.putSerializable("articles", (ArrayList<Article>) articles);
+        outState.putInt("loginRetry", loginRetry);
+        outState.putInt("page", page);
+        outState.putBoolean("loading", loading);
+        outState.putBoolean("loadMore", loadMore);
+        outState.putBoolean("mAlreadyLoaded", mAlreadyLoaded);
+
+    }
+
+    private void restoreFragmentValues(Bundle savedInstanceState) {
+
+        articles        = (ArrayList<Article>) savedInstanceState.getSerializable("articles");
+        loginRetry      = savedInstanceState.getInt("loginRetry");
+        page            = savedInstanceState.getInt("page");
+        loading         = savedInstanceState.getBoolean("loading");
+        loadMore        = savedInstanceState.getBoolean("loadMore");
+        mAlreadyLoaded  = savedInstanceState.getBoolean("mAlreadyLoaded");
 
     }
 
