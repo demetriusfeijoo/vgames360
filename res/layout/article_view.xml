@@ -1,26 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:background="@android:color/white"
         >
 
-    <ScrollView
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
 
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/articleTitle"
+                style="@style/container.articleTitle"
+                />
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/metaData"
+                android:layout_below="@id/articleTitle"
+                style="@style/container"
+                >
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/feedTitle"
+                    style="@style/feedTitle"
+                    />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/articleAuthor"
+                    android:layout_toRightOf="@id/feedTitle"
+                    android:layout_alignTop="@id/feedTitle"
+                    style="@style/articleAuthor"
+                    />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/articleDate"
+                    android:layout_below="@id/articleAuthor"
+                    style="@style/articleDate"
+                    />
+
+        </RelativeLayout>
+
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/articleExcerpt"
+                style="@style/container.articleExcerpt"
+                android:layout_below="@id/metaData"
+                />
+
         <Button
                 android:id="@+id/visit_page"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_margin="20dp"
-                android:text="Visitar Site"
+                android:layout_height="wrap_content"
+                android:text="@string/visit_page"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:textColor="@android:color/white"/>
+                android:layout_below="@id/articleExcerpt"
+                style="@style/container.Button"
+                />
 
-    </ScrollView>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/visit_page"
+                />
 
-</LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

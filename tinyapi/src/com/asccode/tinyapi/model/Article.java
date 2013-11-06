@@ -5,10 +5,11 @@ import java.io.Serializable;
 /**
  * @author <a href="mailto:demetrius.feijoo.91@gmail.com">Demetrius Feijoo Campos</a>
  */
-// Extrair dados de feed para uma classe feed!!!!
+// TODO: Extrair dados de feed para uma classe feed!!!!
 public class Article implements Serializable{
 
     private int id;
+    private String author;
     private String title;
     private String feed_title;
     private int updated;
@@ -22,6 +23,10 @@ public class Article implements Serializable{
 
     public int getId() {
         return id;
+    }
+
+    public String getAuthor() {
+        return author;
     }
 
     public String getTitle() {

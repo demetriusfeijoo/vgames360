@@ -1,12 +1,10 @@
 package br.com.vulcanogames.vgames360.fragments;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
 import br.com.vulcanogames.vgames360.R;
-import br.com.vulcanogames.vgames360.activities.Main;
+import br.com.vulcanogames.vgames360.activities.ArticleView;
 import br.com.vulcanogames.vgames360.adapter.ListMainAdapter;
 import br.com.vulcanogames.vgames360.tinyapi.MyServiceSettings;
 import com.actionbarsherlock.app.SherlockListFragment;
@@ -110,6 +108,8 @@ public class MainView extends SherlockListFragment {
 
         super.onResume();    //To change body of overridden methods use File | Settings | File Templates.
 
+        getSherlockActivity().getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
         this.hideFeedbackMessage();
 
     }
@@ -121,9 +121,10 @@ public class MainView extends SherlockListFragment {
 
                 if( selectedArticle != null  ){
 
-                    ArticleView articleView = new ArticleView(selectedArticle);
-
-                    getSherlockActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, articleView, "articleView").setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack("").commit();
+                    Intent intent = new Intent(getActivity(), ArticleView.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.putExtra("article", selectedArticle);
+                    startActivity( intent );
 
                 }
 

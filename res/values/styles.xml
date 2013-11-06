@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="container">
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+    </style>
+
+    <style name="container.articleTitle">
+        <item name="android:layout_marginTop">10sp</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/darker_gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="feedTitle">
+        <item name="android:textColor">@color/red_main</item>
+        <item name="android:paddingRight">1dp</item>
+    </style>
+
+    <style name="articleAuthor">
+        <item name="android:textColor">@color/darker_gray</item>
+    </style>
+
+    <style name="articleDate">
+        <item name="android:textColor">@color/darker_gray</item>
+    </style>
+
+    <style name="container.articleExcerpt">
+        <item name="android:textColor">@color/darker_gray</item>
+    </style>
+
+    <style name="container.Button">
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

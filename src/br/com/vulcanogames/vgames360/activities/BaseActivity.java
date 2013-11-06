@@ -1,16 +1,17 @@
 package br.com.vulcanogames.vgames360.activities;
 
 import android.os.Bundle;
-import android.support.v4.app.*;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
-import br.com.vulcanogames.vgames360.menusliding.MenuSliding;
 import br.com.vulcanogames.vgames360.R;
+import br.com.vulcanogames.vgames360.menusliding.MenuSliding;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.google.analytics.tracking.android.EasyTracker;
-import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +34,15 @@ public class BaseActivity extends /*SlidingFragmentActivity*/ SherlockFragmentAc
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
         super.onCreate(savedInstanceState);
 
         setTitle(mTitleRes);
+
+        //setTheme(R.style.CustomActionBarTheme);
+
              /*
         setBehindContentView(R.layout.menu_frame);
         FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
@@ -50,9 +57,6 @@ public class BaseActivity extends /*SlidingFragmentActivity*/ SherlockFragmentAc
         sm.setFadeDegree(0.35f);
         sm.setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
              */
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setTitle("");
-        getSupportActionBar().setLogo(R.drawable.logo_action_bar);
     }
 
     @Override
@@ -77,7 +81,8 @@ public class BaseActivity extends /*SlidingFragmentActivity*/ SherlockFragmentAc
 
         switch(item.getItemId()){
             case android.R.id.home:
-               // toggle();
+                //getSupportFragmentManager().popBackStack();  // Remover item da pilha
+                // toggle();
                 return true;
         }
 
