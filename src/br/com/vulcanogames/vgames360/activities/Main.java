@@ -39,11 +39,11 @@ public class Main extends BaseActivity{
         if (savedInstanceState == null)
             getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, mContent).commit();
 
-        //setBehindContentView(R.layout.menu_frame);
-        //getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new MenuSliding()).commit();
+        setBehindContentView(R.layout.menu_frame);
+        getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, new MenuSliding()).commit();
 
-        //getSlidingMenu().setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
-        //setSlidingActionBarEnabled(true);
+        getSlidingMenu().setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
+        setSlidingActionBarEnabled(true);
 
 
     }
@@ -69,7 +69,7 @@ public class Main extends BaseActivity{
         mContent = fragment;
 
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
-        //getSlidingMenu().showContent();
+        getSlidingMenu().showContent();
 
     }
 

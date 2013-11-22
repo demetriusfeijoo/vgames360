@@ -103,9 +103,10 @@ public class ArticleView extends SherlockActivity {
                 easyTracker.send(MapBuilder
                         .createEvent(
                                 "ui_action",            // Event category (required)
-                                "button_press",         // Event action (required)
+                                "click",                // Event action (required)
                                 "visitArticlePage",     // Event label
                                 null)                   // Event value
+                        .set("Feed", article.getFeedTitle())
                         .build()
                 );
 

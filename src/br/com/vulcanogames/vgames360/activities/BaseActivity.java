@@ -1,17 +1,17 @@
 package br.com.vulcanogames.vgames360.activities;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.ListFragment;
+import android.support.v4.app.*;
 import android.support.v4.view.ViewPager;
 import br.com.vulcanogames.vgames360.R;
 import br.com.vulcanogames.vgames360.menusliding.MenuSliding;
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ import java.util.List;
  * Time: 11:25
  * To change this template use File | Settings | File Templates.
  */
-public class BaseActivity extends /*SlidingFragmentActivity*/ SherlockFragmentActivity {
+public class BaseActivity extends SlidingFragmentActivity {
 
     private int mTitleRes;
     protected ListFragment mFrag;
@@ -35,15 +35,14 @@ public class BaseActivity extends /*SlidingFragmentActivity*/ SherlockFragmentAc
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-
         super.onCreate(savedInstanceState);
 
         setTitle(mTitleRes);
 
-        //setTheme(R.style.CustomActionBarTheme);
+        setTheme(R.style.CustomActionBarTheme);
 
-             /*
+        getSupportActionBar().setNavigationMode(ActionBar.DISPLAY_SHOW_CUSTOM);
+
         setBehindContentView(R.layout.menu_frame);
         FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
         mFrag =  new MenuSliding();
@@ -52,11 +51,11 @@ public class BaseActivity extends /*SlidingFragmentActivity*/ SherlockFragmentAc
 
         SlidingMenu sm = getSlidingMenu();
         sm.setShadowWidth(15);
-        sm.setShadowDrawable(R.drawable.shadow);
+        //sm.setShadowDrawable(R.drawable.);
         sm.setBehindOffset(60);
         sm.setFadeDegree(0.35f);
         sm.setTouchModeAbove(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.TOUCHMODE_FULLSCREEN);
-             */
+
     }
 
     @Override
@@ -82,7 +81,7 @@ public class BaseActivity extends /*SlidingFragmentActivity*/ SherlockFragmentAc
         switch(item.getItemId()){
             case android.R.id.home:
                 //getSupportFragmentManager().popBackStack();  // Remover item da pilha
-                // toggle();
+                toggle();
                 return true;
         }
 

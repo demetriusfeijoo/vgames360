@@ -15,7 +15,7 @@ import br.com.vulcanogames.vgames360.fragments.MainView;
 
 public class MenuSliding extends ListFragment {
 	
-	String[] list_contents = {};
+	String[] list_contents = {"Notícias", "Game Versus", "Sobre"};
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
@@ -38,7 +38,10 @@ public class MenuSliding extends ListFragment {
 		Fragment newFragment = new MainView();
 
 		switch (position){
-		case 1:
+        case 1:
+            newFragment = new About();
+            break;
+		case 2:
             newFragment = new About();
 			break;
 		}

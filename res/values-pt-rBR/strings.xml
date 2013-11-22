@@ -6,6 +6,6 @@
     <string name="unavailableNetwork">Conexão Indisponível! Deseja ativar o seu wi-fi?</string>
     <string name="positiveAlertButton">Sim</string>
     <string name="negativeAlertButton">Não</string>
-    <string name="not_logged_in">Problema na autenticação</string>
+    <string name="not_logged_in">Autenticando...</string>
     <string name="visit_page">Ir para o site</string>
 </resources>

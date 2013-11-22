@@ -23,9 +23,12 @@ import com.actionbarsherlock.view.MenuItem;
 import com.asccode.tinyapi.*;
 import com.asccode.tinyapi.model.Article;
 import com.asccode.tinyapi.model.Login;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 
 import java.net.ConnectException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -108,8 +111,6 @@ public class MainView extends SherlockListFragment {
 
         super.onResume();    //To change body of overridden methods use File | Settings | File Templates.
 
-        getSherlockActivity().getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-
         this.hideFeedbackMessage();
 
     }
@@ -121,6 +122,22 @@ public class MainView extends SherlockListFragment {
 
                 if( selectedArticle != null  ){
 
+                    // Enviar evento
+                   EasyTracker easyTracker = EasyTracker.getInstance(getActivity());
+
+                   easyTracker.send(MapBuilder
+                            .createEvent(
+                                    "ui_action",            // Event category (required)
+                                    "click",         // Event action (required)
+                                    "list_item_click",     // Event label
+                                    null)                   // Event value
+                           .set("Page", String.valueOf(page+1) )
+                           .set("position", String.valueOf(position))
+                           .set("Feed", selectedArticle.getFeedTitle())
+                           .build()
+                    );
+
+                    // Abrir activity
                     Intent intent = new Intent(getActivity(), ArticleView.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra("article", selectedArticle);
@@ -246,6 +263,17 @@ public class MainView extends SherlockListFragment {
                     @Override
                     public void onClick(View view) {
 
+                        EasyTracker easyTracker = EasyTracker.getInstance(getActivity());
+
+                        easyTracker.send(MapBuilder
+                                .createEvent(
+                                        "ui_action",  // Event category (required)
+                                        "click",      // Event action (required)
+                                        "reload",     // Event label
+                                        null)         // Event value
+                                .build()
+                        );
+
                         reloadList();
 
                     }
@@ -265,8 +293,10 @@ public class MainView extends SherlockListFragment {
 
             if (actionView != null) {
 
-                actionView.startAnimation(this.getRefreshAnimation());
-
+                if( this.getRefreshAnimation() != null )
+                    actionView.startAnimation(this.getRefreshAnimation());
+                else
+                    Toast.makeText( getActivity(), "Carregando...", Toast.LENGTH_LONG ).show();
             }
 
         }
@@ -376,6 +406,17 @@ public class MainView extends SherlockListFragment {
         try{
 
             service.articles(offset, MainView.REQUEST_ARTICLES_SIZE, articleRequestCallback);
+
+            EasyTracker easyTracker = EasyTracker.getInstance(getActivity());
+
+            easyTracker.send(MapBuilder
+                    .createEvent(
+                            "app_action",    // Event category (required)
+                            "load_page",     // Event action (required)
+                            "Page",          // Event label
+                            (long)this.page+1)// Event value
+                    .build()
+            );
 
             Log.i("VGames", String.format("Load articles from offset %d until length %d", offset, MainView.REQUEST_ARTICLES_SIZE));
 
