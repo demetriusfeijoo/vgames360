@@ -12,6 +12,8 @@ import br.com.vulcanogames.vgames360.R;
 import br.com.vulcanogames.vgames360.fragments.About;
 import br.com.vulcanogames.vgames360.activities.Main;
 import br.com.vulcanogames.vgames360.fragments.MainView;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 
 public class MenuSliding extends ListFragment {
 	
@@ -37,6 +39,9 @@ public class MenuSliding extends ListFragment {
 
 		Fragment newFragment = new MainView();
 
+        EasyTracker easyTracker = EasyTracker.getInstance(getActivity());
+
+
 		switch (position){
         case 1:
             newFragment = new About();
@@ -46,8 +51,20 @@ public class MenuSliding extends ListFragment {
 			break;
 		}
 
-		if (newFragment != null)
-			switchContent(newFragment);
+		if (newFragment != null){
+
+            switchContent(newFragment);
+
+            if( position+1 <= list_contents.length )
+                easyTracker.send(MapBuilder
+                        .createEvent(
+                                "ui_action",            // Event category (required)
+                                "click",                // Event action (required)
+                                " Menu Item: "+list_contents[position],     // Event label
+                                null)                   // Event value
+                        .build()
+                );
+        }
 
 	}
 	
